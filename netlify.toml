@@ -15,7 +15,7 @@
 
 # El og-image casi nunca cambia: cache largo + immutable.
 [[headers]]
-  for = "/og-image-macul.jpg"
+  for = "/og-web.jpg"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 

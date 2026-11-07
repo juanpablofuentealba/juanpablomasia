@@ -170,7 +170,7 @@ producción.
 | `/` (HTML) | `max-age=0, must-revalidate` ✅ correcto (siempre fresco) |
 | `/assets/*.css` | `max-age=31536000, immutable` ✅ |
 | `/assets/*.jpg` | `max-age=31536000, immutable` ✅ |
-| `/og-image-macul.jpg` | `max-age=31536000, immutable` ✅ (antes 1 h) |
+| `/og-web.jpg` | `max-age=31536000, immutable` ✅ (antes 1 h) |
 
 **Ojo.** Al cachear el og-image 1 año, si algún día se cambia esa imagen hay
 que **renombrarla o subir el `?v=`** del meta, si no seguirá la vieja en

@@ -18,7 +18,7 @@ Publicado en Netlify: https://juanpablomasia.netlify.app/
 ├── linux-vs-windows/index.html
 ├── revivir-pc-viejo-con-linux/index.html
 ├── pc-se-apaga-solo/index.html    # Guía: mi PC se apaga solo (7 causas)
-├── og-image-macul.jpg              # Imagen de vista previa (WhatsApp/redes)
+├── og-web.jpg              # Imagen de vista previa (WhatsApp/redes)
 ├── assets/
 │   ├── style.css
 │   ├── como-instalar-cachyos.jpg
@@ -76,7 +76,7 @@ actualiza:
 
 Metas relevantes en `index.html`:
 
-- `og:image` → `https://juanpablomasia.netlify.app/og-image-macul.jpg` (1200x630)
+- `og:image` → `https://juanpablomasia.netlify.app/og-web.jpg` (1200x630)
 - `og:image:width` / `og:image:height` → `1200` / `630`
 - `twitter:card` → `summary_large_image`
 
