@@ -294,3 +294,59 @@ Mantención **$9.900 / $19.900/mes**.
 | ~~H-07~~ | ~~`lastmod` en el sitemap~~ ✅ hecho | — | SEO |
 | B1 | Search Console (clic operador) | — | indexación |
 | B2 | Dominio `.cl` (ver `PENDIENTES-SEO.md`) | — | **el grande** |
+
+---
+
+## H-89 · Renombrar un repo en GitHub borra el webhook de Netlify (auto-deploy muerto)
+
+**Síntoma (07-nov-2026):** en el repo `juanpablomasia` (ex `cachyos-chile`),
+los `git push` a `main` **no disparaban deploys automáticos** en Netlify.
+Los deploys manuales (`netlify deploy --prod` o `createSiteBuild`) sí funcionaban,
+así que el sitio nunca se cayó — pero cada cambio quedaba sin publicar hasta
+que alguien lo forzaba a mano.
+
+**Causa raíz:** al **renombrar el repositorio** (`cachyos-chile` → `juanpablomasia`),
+GitHub **eliminó el webhook** de Netlify, porque apuntaba al nombre viejo.
+Netlify seguía con el repo nuevo configurado y la deploy key autorizada
+(por eso el deploy manual andaba), pero **nadie le avisaba de los push**:
+
+```
+$ gh api repos/<owner>/<repo>/hooks
+[]
+```
+
+**Diagnóstico falso por el que se perdió tiempo:** mirar el historial de deploys
+y concluir "el auto-deploy falla a veces". En realidad **nunca funcionó** desde
+el renombrado; las veces que "funcionó" fue porque se forzó a mano o el build
+tardó ~1-3 min y parecía caído.
+
+**Solución:** recrear el webhook en GitHub apuntando a Netlify:
+
+```bash
+gh api repos/<owner>/<repo>/hooks --method POST --input - <<'JSON'
+{
+  "name": "web",
+  "active": true,
+  "events": ["push", "pull_request", "release"],
+  "config": {
+    "url": "https://api.netlify.com/hooks/github",
+    "content_type": "json",
+    "insecure_ssl": "0"
+  }
+}
+JSON
+```
+
+**Verificación:** hacer un push y **esperar sin forzar** (2-3 min). El deploy debe
+aparecer con el `commit_ref` del push. También se puede mirar:
+
+```bash
+gh api repos/<owner>/<repo>/hooks/<id> --jq '.last_response'   # esperado: 204
+```
+
+**Resultado (a16, 07-nov-2026):** push → deploy en **4 s** y en **35 s** en dos
+pruebas seguidas. Cero intervención manual.
+
+**Regla:** **si alguna vez se renombra un repo con integración de Netlify (o
+similar), hay que recrear el webhook.** Un deploy manual que funciona NO prueba
+que el automático esté vivo.
