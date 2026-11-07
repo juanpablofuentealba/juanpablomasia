@@ -227,7 +227,7 @@ el curso cumplió.
 | `Clase-3.pdf` | Que tus archivos no se pierdan |
 | `Clase-4.pdf` | Mantenimiento y autonomía |
 
-- **Tamaño:** A4, una página cada una, listas para imprimir.
+- **Tamaño:** CARTA (Letter, 21,6×27,9 cm), una página cada una, listas para imprimir.
 - **Fuentes HTML:** `hoja1.html` … `hoja4.html` (editables).
 - **Regenerar:** `./marketing/clases-pdf/generar-pdf.sh` (usa Chromium headless,
   se corre en el MSI o cualquier equipo con Chromium).
