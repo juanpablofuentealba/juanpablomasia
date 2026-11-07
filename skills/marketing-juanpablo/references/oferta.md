@@ -69,7 +69,25 @@ optimización y software esencial. **Solo software.**
 Herramientas: RustDesk + Tailscale. Se cobra la hora (no fracción, salvo
 acuerdo previo).
 
-## El 5º servicio que falta (oportunidad)
+### 5. Clases de computación y Linux — presencial en Macul y remoto
+
+| Qué | Precio |
+|---|---|
+| Clase individual · **Macul** (visita incluida) | **$18.000/hora** |
+| Fuera de Macul (Gran Santiago) | **+$19.900** por traslado |
+| **Dúo** (dos personas, misma sesión) · Macul | **$18.000/hora** |
+
+- Dirigidas a **adultos y niños** que quieren aprender: uso básico, Linux,
+  terminal, respaldos y mantenimiento.
+- **Pack de 4 clases: $60.000** (una por semana; genera compromiso).
+- Menores de edad: siempre **acompañados por un adulto**.
+- Requisito: equipo con Linux ya instalado (o se cotiza aparte).
+
+> ⚠️ **Clases y soporte no se mezclan.** La clase **enseña**; el soporte
+> **arregla**. Si enseñando aparece un problema técnico, se cotiza como
+> soporte remoto ($18.000/h) aparte.
+
+## El 6º servicio que falta (oportunidad)
 
 **"El PC se cae / se apaga solo" → diagnóstico + informe** (100% remoto).
 Es el producto **más probado en la práctica** (caso `rai`).
