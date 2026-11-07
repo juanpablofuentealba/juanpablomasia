@@ -213,3 +213,24 @@ el curso cumplió.
   que hay que arreglar, se cotiza como soporte remoto ($18.000/h) aparte.
 - Este documento es del operador. **No se publica en el sitio** (el sitio
   muestra el resumen de 4 bloques, no la malla completa).
+
+---
+
+## Material entregable (PDF listo)
+
+📁 **`marketing/clases-pdf/`** — las 4 hojas para el alumno:
+
+| Archivo | Clase |
+|---|---|
+| `Clase-1.pdf` | Conocer el equipo |
+| `Clase-2.pdf` | La terminal, sin miedo |
+| `Clase-3.pdf` | Que tus archivos no se pierdan |
+| `Clase-4.pdf` | Mantenimiento y autonomía |
+
+- **Tamaño:** A4, una página cada una, listas para imprimir.
+- **Fuentes HTML:** `hoja1.html` … `hoja4.html` (editables).
+- **Regenerar:** `./marketing/clases-pdf/generar-pdf.sh` (usa Chromium headless,
+  se corre en el MSI o cualquier equipo con Chromium).
+
+> ✅ **Hecho 2026-11-07.** Cada hoja tiene la "misión" de la clase arriba,
+> el contenido esencial, una práctica concreta y el contacto al pie.

@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<style>
+@page { size: A4; margin: 18mm 16mm; }
+body { font-family: sans-serif; color:#111; font-size: 12pt; line-height:1.5; }
+h1 { font-size: 20pt; margin:0 0 4mm 0; color:#0a3d7a; }
+h2 { font-size: 13pt; margin:6mm 0 2mm 0; color:#0a3d7a; border-bottom:1px solid #ccc; padding-bottom:1mm;}
+table { border-collapse: collapse; width:100%; margin:3mm 0; }
+th,td { border:1px solid #bbb; padding:2.5mm 3mm; text-align:left; font-size:11pt;}
+th { background:#eef3fa; }
+.box { background:#f5f8fc; border-left:4px solid #0a3d7a; padding:3mm 4mm; margin:3mm 0; }
+.mono { font-family: monospace; background:#eee; padding:0.5mm 1.5mm; border-radius:2px; }
+.foot { margin-top:8mm; padding-top:3mm; border-top:1px solid #ccc; font-size:9pt; color:#666; }
+.big { font-size:14pt; font-weight:bold; }
+</style></head><body>
+<h1>Clase 2 · La terminal, sin miedo</h1>
+<div class="box"><span class="big">Tu misión:</span> usar la terminal para moverte<br>y crear una carpeta, <b>solo con comandos</b>.</div>
+
+<h2>¿Qué es una terminal?</h2>
+<p>Otra forma de pedir lo mismo que ya haces con el mouse. <b>Nada de magia.</b><br>
+Siempre tiene su equivalente: ver el contenido de una carpeta en Dolphin = <span class="mono">ls</span> en la terminal.</p>
+
+<h2>Los comandos que necesitas</h2>
+<table>
+<tr><th>Comando</th><th>Qué hace</th><th>Con el mouse sería…</th></tr>
+<tr><td class="mono">pwd</td><td>Muestra dónde estás</td><td>La barra de ruta</td></tr>
+<tr><td class="mono">ls</td><td>Lista lo que hay</td><td>Ver el contenido</td></tr>
+<tr><td class="mono">cd carpeta</td><td>Entra a una carpeta</td><td>Doble clic</td></tr>
+<tr><td class="mono">cd ..</td><td>Vuelve atrás</td><td>La flecha atrás</td></tr>
+<tr><td class="mono">mkdir nombre</td><td>Crea una carpeta</td><td>Nueva carpeta</td></tr>
+<tr><td class="mono">clear</td><td>Limpia la pantalla</td><td>—</td></tr>
+<tr><td class="mono">exit</td><td>Cierra la terminal</td><td>La X</td></tr>
+</table>
+
+<h2>Trucos que salvan</h2>
+<ul>
+<li><b>Tab</b> completa el nombre solita. Escribe <span class="mono">cd Doc</span> + Tab y aparece.</li>
+<li><b>Flecha ↑</b> repite el último comando.</li>
+<li><b>Mirar no rompe nada.</b> Explorar el sistema es seguro.</li>
+</ul>
+
+<h2>Practica</h2>
+<div class="box">1. Abre <b>Konsole</b>.<br>
+2. Escribe <span class="mono">pwd</span> — ¿dónde estás?<br>
+3. Escribe <span class="mono">ls</span> — ¿qué hay?<br>
+4. Entra a tu carpeta con <span class="mono">cd</span>.<br>
+5. Crea una carpeta nueva con <span class="mono">mkdir mi-carpeta</span>.<br>
+6. Compruébalo abriendo Dolphin.</div>
+
+<div class="foot">Juan Pablo + IA · Macul · WhatsApp +56 9 3123 2000</div>
+</body></html>
