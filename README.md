@@ -5,6 +5,10 @@
 > viven en `rustdesk-wlan-ssh-pi`, no acá. Regla: *qué se vende → este repo ·
 > cómo se trabaja → `rustdesk-wlan-ssh-pi`*.
 
+> **Quién está detrás:** **Juan Pablo Fuentealba Bizama** (Macul, Chile).
+> **Marca:** "Juan Pablo + IA". El nombre del repo, **`juanpablomasia`**, se lee
+> **"Juan Pablo + IA"** (*mas-ia* = *más IA*) — **no** es un apellido.
+
 Sitio estático (HTML + CSS) para el servicio técnico de software: **instalación limpia de CachyOS** a domicilio (visita incluida en Macul, +$19.900 fuera de Macul), **Android** solo software en Macul y **soporte remoto** en todo Chile.
 Publicado en Netlify: https://juanpablomasia.netlify.app/
 

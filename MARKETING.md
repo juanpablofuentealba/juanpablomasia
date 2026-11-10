@@ -19,8 +19,12 @@
 
 | Qué | Nombre |
 |---|---|
+| **La persona (operador)** | **Juan Pablo Fuentealba Bizama** (Macul, Chile) |
 | **La web (marca)** | **Juan Pablo + IA** → https://juanpablomasia.netlify.app/ |
 | **El repo de GitHub** | `juanpablofuentealba/juanpablomasia` (repo **público**) |
+
+> **`juanpablomasia` = "Juan Pablo + IA".** *mas-ia* se lee *"más IA"* — es el
+> **+ IA** de la marca, **no** un apellido. No escribir "Juan Pablo Masía".
 
 - **Ya no existe una página "cachyos-chile"**. `cachyos-chile.netlify.app`
   responde **404** (verificado en vivo el 05-nov-2026).
@@ -164,7 +168,7 @@ Ordenadas por relación **impacto / esfuerzo**:
 
 | Activo | Dónde | Uso |
 |---|---|---|
-| **Sitio comercial** "Juan Pablo + IA" | repo `cachyos-chile` → Netlify (`juanpablomasia.netlify.app`) | Escaparate principal, precios a la vista |
+| **Sitio comercial** "Juan Pablo + IA" | repo `juanpablomasia` → Netlify (`juanpablomasia.netlify.app`) | Escaparate principal, precios a la vista |
 | **4 guías orgánicas** (CachyOS, Linux vs Windows, revivir PC viejo, índice) | `/guias/`, `/como-instalar-cachyos/`, `/linux-vs-windows/`, `/revivir-pc-viejo-con-linux/` | Imán de tráfico: responden búsquedas reales de gente que **ya** busca soluciones Linux |
 | **Ejemplo real publicado** | `matias-electricista.netlify.app` (cliente `matías`, electricista) | Prueba social en la sección "¿Quién está detrás?" (`#quien-soy`) |
 | **Kit público (vitrina)** | `rustdesk-wlan-ssh-pi-vitrina` | Marketing del *método*, sin datos de clientes |
