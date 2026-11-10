@@ -50,7 +50,7 @@
   **Google orgánico + WhatsApp**. Sin **Search Console** ni **dominio propio**,
   el sitio compite con las manos atadas.
 - **Las dos palancas grandes siguen pendientes:** (1) alta en **Google Search
-  Console**, (2) **dominio `.cl` propio**: **`juanpablomasia.cl`**, verificado
+  Console**, (2) **dominio `.cl` propio**: **`juanpabloia.cl`**, verificado
   **libre** en NIC Chile (05-nov-2026).
 - **IndexNow** (Bing/Yandex) está armado y **falla con 403** por ser subdominio
   `.netlify.app`: se activa solo cuando haya dominio propio.
@@ -142,8 +142,12 @@
 
 Ordenadas por relación **impacto / esfuerzo**:
 
-1. **Dominio `.cl` propio** — **`juanpablomasia.cl`** (elegido por el operador el
-   05-nov-2026, **verificado LIBRE** en el whois de NIC Chile).
+1. **Dominio `.cl` propio** — **`juanpabloia.cl`** (elegido por el operador el
+   10-nov-2026, **verificado LIBRE** en el whois de NIC Chile).
+   **Por qué no `juanpablomasia.cl`:** ese nombre (= "Juan Pablo + IA") **se lee
+   como apellido "Masía"**, y **Google/ Bing / las IA lo leen así** (no leen
+   repos privados). `juanpabloia` es más corto y se entiende solo. El
+   `juanpablomasia.cl` también está libre: opcional, como redirección.
    ~~`serviciotecnicomacul.cl`~~ también estaba libre, pero se prefiere la marca
    personal: sirve para todos los servicios, no solo para Macul. $9.990/año, se inscribe a nombre del
    operador con RUT (el agente **no puede** comprarlo: pago con tarjeta +
@@ -205,7 +209,7 @@ Contactos en `rustdesk-clientes/investigacion/macul-contactos-salud.md`.
 ## 7. Pendientes de marketing (checklist accionable)
 
 **Operador (no delegable):**
-- [ ] Comprar **`juanpablomasia.cl`** en NIC Chile (RUT + tarjeta, $9.990/año).
+- [ ] Comprar **`juanpabloia.cl`** en NIC Chile (RUT + tarjeta, $9.990/año).
       ⚠️ Verificado LIBRE el 05-nov-2026. Pasos: **`DOMINIO-PENDIENTE.md`**.
 - [ ] Alta en **Google Search Console** (verificación por GA4) + enviar sitemap
       + solicitar indexación de las 5 URLs.
@@ -268,7 +272,7 @@ necesitan para *poder* indexar y rankear. Hoy está casi todo:
 | **`404.html`** propia | ✅ hecho 05-nov-2026 |
 | **GA4 en subpáginas** | ✅ hecho 05-nov-2026 (5 de 5) |
 | **Search Console** | ❌ sin alta (paso del operador) |
-| **Dominio propio** | ⏳ `juanpablomasia.cl` **LIBRE**, todo preparado — ver `DOMINIO-PENDIENTE.md` |
+| **Dominio propio** | ⏳ `juanpabloia.cl` **LIBRE**, todo preparado — ver `DOMINIO-PENDIENTE.md` |
 | **Skill de marketing** | ✅ `marketing-juanpablo` instalada (Etapa 2) |
 
 > **Aporte nuevo de esta investigación:** el JSON-LD por tipo de página **ya está
@@ -385,13 +389,13 @@ Piezas de Pi que ya están instaladas y sirven para esto:
 - [ ] El operador revisa `~/informes/marketing/ULTIMO.md`; lo aprobado se
       convierte en PR. (Ciclo humano, por diseño.)
 
-**Etapa 4 — Dominio propio `juanpablomasia.cl`** (verificado LIBRE en NIC, 05-nov-2026):
+**Etapa 4 — Dominio propio `juanpabloia.cl`** (verificado LIBRE en NIC, 05-nov-2026):
 - [x] `bin/cambiar-dominio.sh` listo: cambia las **66** apariciones del host
       (canonical, OG, Twitter, JSON-LD, sitemap, robots, llms.txt, IndexNow).
 - [x] Redirección 301 escrita en `netlify.toml` (comentada, se activa al conectar).
 - [ ] **Operador:** comprar en NIC Chile ($9.990/año) y conectar en Netlify.
       Pasos exactos en **`DOMINIO-PENDIENTE.md`**.
-- [ ] Al conectar: correr `./bin/cambiar-dominio.sh juanpablomasia.cl`,
+- [ ] Al conectar: correr `./bin/cambiar-dominio.sh juanpabloia.cl`,
       descomentar el 301 y **reintentar IndexNow** (deja de dar 403).
 
 ### 8.7 La advertencia importante
@@ -424,7 +428,7 @@ subpáginas con GA4 -> 4 de 4 (05-nov-2026)
 sitemap      -> 5 lastmod reales (05-nov-2026)
 JSON-LD por página  -> LocalBusiness/Offer/FAQPage · HowTo · Article · CollectionPage
 IndexNow     -> 403 UserForbiddedToAccessSite (subdominio .netlify.app)
-dominio .cl  -> juanpablomasia.cl LIBRE (whois.nic.cl, 05-nov-2026)
+dominio .cl  -> juanpabloia.cl LIBRE (whois.nic.cl, 05-nov-2026)
 a13          -> crond (runit) activo; pi --print / --mode json disponibles
 ```
 
