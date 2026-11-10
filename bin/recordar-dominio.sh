@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 # ---------------------------------------------------------------------------
-# recordar-dominio.sh — recuerda al operador comprar juanpablomasia.cl.
+# recordar-dominio.sh — recuerda al operador comprar juanpabloia.cl.
 #
 # Contexto: el operador cobra alrededor de los días 15 y 20 de cada mes y
 # decidió (05-nov-2026) comprar el dominio dentro de esa ventana.
@@ -10,7 +10,7 @@
 #       ~/dev/juanpablomasia/bin/recordar-dominio.sh
 #
 # Qué hace:
-#   1. Se detiene en cuanto juanpablomasia.cl empieza a responder (ya comprado).
+#   1. Se detiene en cuanto juanpabloia.cl empieza a responder (ya comprado).
 #   2. Si sigue sin existir, manda UN aviso por WhatsApp a a16 y no repite
 #      dentro del mismo día (marca en ~/.config/recordar-dominio.state).
 #
@@ -18,7 +18,7 @@
 # ---------------------------------------------------------------------------
 set -uo pipefail
 
-DOMINIO="juanpablomasia.cl"
+DOMINIO="juanpabloia.cl"
 STATE_DIR="$HOME/.config"
 STATE="$STATE_DIR/recordar-dominio.state"
 HOY="$(date +%Y-%m-%d)"
@@ -56,7 +56,7 @@ if [[ $FORCE -eq 0 ]] && [[ -f "$STATE" ]] && grep -q "avisado $HOY" "$STATE" 2>
   exit 0   # silencio: ya se avisó hoy
 fi
 
-MSG='Recordatorio: comprar juanpablomasia.cl en nic.cl (9.990 al año). Ya esta todo preparado: avisa "dominio comprado" y se activa. Detalle: ~/dev/juanpablomasia/DOMINIO-PENDIENTE.md'
+MSG='Recordatorio: comprar juanpabloia.cl en nic.cl (9.990 al año). Ya esta todo preparado: avisa "dominio comprado" y se activa. Detalle: ~/dev/juanpablomasia/DOMINIO-PENDIENTE.md'
 
 # Avisar a a16 por WhatsApp (wa.sh de la malla) si está disponible.
 WS="$HOME/rustdesk-clientes/scripts/wa.sh"

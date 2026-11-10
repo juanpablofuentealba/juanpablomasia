@@ -1,8 +1,15 @@
-# Dominio `juanpablomasia.cl` — todo listo, falta tu mano
+# Dominio `juanpabloia.cl` — todo listo, falta tu mano
 
-> **Estado al 05-nov-2026.** El dominio elegido es **`juanpablomasia.cl`**.
-> Verificado **LIBRE** en el whois oficial de NIC Chile (`whois.nic.cl`:
-> `juanpablomasia.cl: no entries found`).
+> **Estado al 10-nov-2026.** El dominio elegido es **`juanpabloia.cl`**.
+> Verificado **LIBRE** en el whois de NIC Chile (`no existe`, 10-nov-2026).
+>
+> **Por qué `juanpabloia` y no `juanpablomasia` (decisión del operador,
+> 10-nov-2026):** `juanpablomasia` (= *Juan Pablo + IA*) **se lee como apellido
+> "Masía"** — y eso no se puede corregir a tiempo: **Google, Bing y las IA lo
+> leen así** (no leen los repos privados donde se documente). `juanpabloia` es
+> **más corto, se entiende solo** ("Juan Pablo IA") y comunica la marca sin
+> ambigüedad. `juanpablomasia.cl` **también está libre**: si se quiere, se
+> registra como **redirección** a la principal (~$9.990/año extra).
 >
 > **El trabajo técnico ya está hecho.** Lo único que no puede hacer un agente
 > es **comprar** el dominio (requiere RUT + tarjeta + sesión autenticada;
@@ -32,11 +39,14 @@
 >
 > Hay un recordatorio automático (cron en a13, días 14, 15, 16, 19 y 20)
 > que avisa por WhatsApp a a16. Script: `bin/recordar-dominio.sh`.
+>
+> 🛒 **Al comprar: buscar `juanpabloia.cl`** (el `juanpablomasia.cl` es
+> opcional, solo como redirección).
 
 ### Paso 1 — Comprar el dominio (5 min)
 
 1. Entrar a **https://www.nic.cl** → "Inscribe tu dominio".
-2. Buscar **`juanpablomasia.cl`** (libre) y agregarlo al carro.
+2. Buscar **`juanpabloia.cl`** (libre) y agregarlo al carro.
 3. Pagar **$9.990/año** (exento de IVA) con débito o crédito.
 4. Inscribirlo **a tu nombre** (RUT). Es a 1 año, renovable.
 
@@ -47,26 +57,26 @@
 
 Con el dominio comprado, **respóndeme "dominio comprado"**. Yo hago:
 
-- Corro `./bin/cambiar-dominio.sh juanpablomasia.cl` (las 66 URLs).
+- Corro `./bin/cambiar-dominio.sh juanpabloia.cl` (las 66 URLs).
 - Activo la redirección 301 en `netlify.toml`.
 - Regenero `sitemap.xml` y `llms.txt`.
 - Abro PR, verifico en el deploy preview y mergeo.
 
 > ⚠️ **Importante:** el cambio de URLs **no hace daño antes de tiempo** —
-> `juanpablomasia.cl` da error de DNS hasta que esté conectado. Por eso lo
+> `juanpabloia.cl` da error de DNS hasta que esté conectado. Por eso lo
 > hacemos **después** de conectar el dominio, no antes.
 
 ### Paso 3 — Conectar el dominio en Netlify (5 min, requiere tu login)
 
 1. Entrar a **https://app.netlify.com** → proyecto **`juanpablomasia`**.
-2. **Domain settings** → **Add a domain** → escribir `juanpablomasia.cl`.
+2. **Domain settings** → **Add a domain** → escribir `juanpabloia.cl`.
 3. Netlify te muestra **2 caminos**:
    - **Opción A (recomendada, más simple):** cambiar los **nameservers** en NIC
      Chile por los de Netlify (`dns1.pXX.nsone.net` y compañía). Netlify
      configura todo solo (SSL incluido).
    - **Opción B:** dejar los nameservers de NIC y agregar los registros que
      Netlify indique (A / CNAME). Más manual, más fácil equivocarse.
-4. Marcar `juanpablomasia.cl` como **Primary domain** (el `.netlify.app` queda
+4. Marcar `juanpabloia.cl` como **Primary domain** (el `.netlify.app` queda
    redirigiendo solo).
 5. Esperar propagación DNS (de minutos a un par de horas).
 
@@ -74,11 +84,11 @@ Con el dominio comprado, **respóndeme "dominio comprado"**. Yo hago:
 
 ### Paso 4 — Volver a Search Console (5 min)
 
-Cuando `https://juanpablomasia.cl` ya responda:
+Cuando `https://juanpabloia.cl` ya responda:
 
-1. En **Search Console**: agregar propiedad **`https://juanpablomasia.cl/`**
+1. En **Search Console**: agregar propiedad **`https://juanpabloia.cl/`**
    (verificación por GA4, que ya está en las 5 páginas).
-2. Enviar el sitemap: `https://juanpablomasia.cl/sitemap.xml`.
+2. Enviar el sitemap: `https://juanpabloia.cl/sitemap.xml`.
 3. "Inspección de URL" → "Solicitar indexación" en las 5 páginas.
 4. Si ya tenías la propiedad del `.netlify.app`: en **Configuración → Cambio de
    dirección** puedes declarar el cambio de dominio (señal fuerte para Google).
@@ -92,7 +102,7 @@ Cuando `https://juanpablomasia.cl` ya responda:
 | Google **desconfía** de subdominios gratuitos | Dominio país = señal de legitimidad |
 | **IndexNow 403** (Bing/Yandex nunca se enteran) | IndexNow **funciona** en cada deploy |
 | Compite contra negocios con `.cl` | Compite en igualdad |
-| Cliente dice "¿es tuyo esto?" | Marca propia: `juanpablomasia.cl` |
+| Cliente dice "¿es tuyo esto?" | Marca propia: `juanpabloia.cl` |
 | URL larga para dictar por teléfono | Dirección que se dicta de una |
 
 ---
@@ -106,6 +116,6 @@ Cuando `https://juanpablomasia.cl` ya responda:
 - **Renovación:** NIC avisa por correo. Si se vence, el dominio entra en
   "período de gracia" y luego se **libera al público**. Mantener el correo al día.
 - **Alternativa si se te ocurre otro nombre:** `serviciotecnicomacul.cl` y
-  `macultech.cl` también estaban libres al 01-nov-2026. Pero `juanpablomasia.cl`
+  `macultech.cl` también estaban libres al 01-nov-2026. Pero `juanpabloia.cl`
   es **mejor a largo plazo**: la marca personal sirve para todos los servicios
   (web, PC, Android, remoto), no solo para Macul.
