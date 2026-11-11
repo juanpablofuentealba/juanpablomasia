@@ -18,7 +18,7 @@ set -uo pipefail
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO" || exit 1
 
-SITE="https://juanpablomasia.netlify.app"
+SITE="https://juanpabloia.cl"
 OUT="sitemap.xml"
 CHECK=0
 [[ "${1:-}" == "--check" ]] && CHECK=1

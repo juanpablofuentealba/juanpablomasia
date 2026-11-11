@@ -46,21 +46,16 @@ else
   echo "→ Volviendo a $VIEJO_HOST"
 fi
 
-# Archivos donde vive el host (los .md se actualizan aparte, a mano).
-FILES=(
-  "index.html"
-  "guias/index.html"
-  "como-instalar-cachyos/index.html"
-  "linux-vs-windows/index.html"
-  "revivir-pc-viejo-con-linux/index.html"
-  "pc-se-apaga-solo/index.html"
-  "404.html"
-  "robots.txt"
-  "llms.txt"
-  "sitemap.xml"
-  "avisar-buscadores.sh"
-  "bin/generar-sitemap.sh"
-  "netlify/plugins/indexnow/index.js"
+# Archivos donde vive el host. Antes era una lista fija y se olvidaban paginas
+# nuevas (bug real 2026-11-10: faltaban soporte-remoto, pc-macul, android,
+# clases). Ahora se DESCUBREN automaticamente: cualquier archivo versionado
+# que contenga el host. Excluye .git, node_modules y los .md (a mano).
+mapfile -t FILES < <(
+  grep -rl -F "$VIEJO_HOST" . \
+    --include='*.html' --include='*.xml' --include='*.txt' \
+    --include='*.js' --include='*.sh' --include='*.json' \
+    --exclude-dir=.git --exclude-dir=node_modules \
+    | sed 's#^\./##' | sort
 )
 
 echo "== Cambio de dominio =="
@@ -85,7 +80,10 @@ for f in "${FILES[@]}"; do
     # Revertir: cualquier *.cl del sitio vuelve al netlify.app
     sed -i -E "s#https?://(www\.)?[a-z0-9.-]+\.cl(\b|/)#https://$NUEVO_HOST\2#g" "$f"
   else
-    sed -i -F "s#$VIEJO_HOST#$NUEVO_HOST#g" "$f"
+    # OJO: GNU/BSD sed NO tienen flag -F (era un bug real: sed imprimia su
+    # ayuda y no cambiaba nada, en silencio). El delimitador '#' ya evita
+    # escapar las barras. Usar -i a secas es portable (GNU y BSD).
+    sed -i "s#$VIEJO_HOST#$NUEVO_HOST#g" "$f"
   fi
 done
 

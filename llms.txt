@@ -8,7 +8,7 @@
 ## Datos del negocio
 
 - Nombre: Juan Pablo + IA (Servicio Técnico Macul)
-- Sitio: https://juanpablomasia.netlify.app/
+- Sitio: https://juanpabloia.cl/
 - Contacto: WhatsApp +56 9 3123 2000 (https://wa.me/56931232000)
 - Ubicación: Macul, Región Metropolitana, Chile
 - Cobertura: presencial en Macul · remoto en todo Chile
@@ -31,17 +31,17 @@
 
 ## Páginas
 
-- [Inicio](https://juanpablomasia.netlify.app/): los 4 servicios con precios,
+- [Inicio](https://juanpabloia.cl/): los 4 servicios con precios,
   preguntas frecuentes y quién está detrás.
-- [Guías de Linux](https://juanpablomasia.netlify.app/guias/): índice de guías
+- [Guías de Linux](https://juanpabloia.cl/guias/): índice de guías
   gratuitas sobre Linux y CachyOS.
-- [Cómo instalar CachyOS paso a paso](https://juanpablomasia.netlify.app/como-instalar-cachyos/):
+- [Cómo instalar CachyOS paso a paso](https://juanpabloia.cl/como-instalar-cachyos/):
   guía completa de instalación desde un USB booteable (Chile, 2026).
-- [Linux vs Windows en 2026](https://juanpablomasia.netlify.app/linux-vs-windows/):
+- [Linux vs Windows en 2026](https://juanpabloia.cl/linux-vs-windows/):
   comparativa de rendimiento, juegos, privacidad y programas.
-- [Cómo revivir un PC viejo con Linux](https://juanpablomasia.netlify.app/revivir-pc-viejo-con-linux/):
+- [Cómo revivir un PC viejo con Linux](https://juanpabloia.cl/revivir-pc-viejo-con-linux/):
   devolverle velocidad a un computador antiguo.
-- [Mi PC se apaga solo: 7 causas](https://juanpablomasia.netlify.app/pc-se-apaga-solo/):
+- [Mi PC se apaga solo: 7 causas](https://juanpabloia.cl/pc-se-apaga-solo/):
   por qué el computador se apaga o reinicia solo y cómo identificar la causa
   (temperatura, fuente de poder, batería, memoria, drivers, configuración).
 

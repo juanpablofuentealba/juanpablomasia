@@ -34,7 +34,7 @@
 # ---------------------------------------------------------------------------
 set -uo pipefail
 
-SITE="${SITIO_URL:-https://juanpablomasia.netlify.app}"
+SITE="${SITIO_URL:-https://juanpabloia.cl}"
 JSON=0
 QUIET=0
 for a in "$@"; do

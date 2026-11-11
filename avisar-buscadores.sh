@@ -5,7 +5,7 @@
 # para Google se usa Search Console (ver PENDIENTES-SEO.md).
 set -euo pipefail
 
-SITE="https://juanpablomasia.netlify.app"
+SITE="https://juanpabloia.cl"
 KEY_FILE="./4ac291d7c370106abaa06b0edf277790.txt"
 KEY="$(tr -d '[:space:]' < "$KEY_FILE")"
 
@@ -28,7 +28,7 @@ echo "→ Avisando ${#URLS[@]} URLs a IndexNow (api.indexnow.org)…"
 RESP=$(curl -sS -o /dev/null -w "%{http_code}" \
   -X POST "https://api.indexnow.org/indexnow" \
   -H "Content-Type: application/json; charset=utf-8" \
-  -d "{\"host\":\"juanpablomasia.netlify.app\",\"key\":\"$KEY\",\"keyLocation\":\"$SITE/$KEY.txt\",\"urlList\":$JSON_URLS}")
+  -d "{\"host\":\"juanpabloia.cl\",\"key\":\"$KEY\",\"keyLocation\":\"$SITE/$KEY.txt\",\"urlList\":$JSON_URLS}")
 
 case "$RESP" in
   200|202) echo "✅ Aceptado por IndexNow (HTTP $RESP). Bing/Yandex indexarán pronto." ;;
