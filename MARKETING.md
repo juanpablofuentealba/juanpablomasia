@@ -79,10 +79,12 @@
 | 6 | **Auditoría de código + informe** — **NUEVO** | **$300.000 – $800.000** | Remoto |
 | 7 | **Automatización de un proceso** — **NUEVO** | **$500.000 – $1.500.000** | Remoto |
 | 8 | **Módulo nuevo en sistema existente** — **NUEVO** | **$800.000 – $2.000.000** | Remoto |
+| 9 | **🌟 Paquete "Negocio digital completo"** — **NUEVO** | **$499.000 – $699.000** | 100% remoto |
 
 > El **#5** es el producto más caro de la línea pyme (evolución del #1), detalle
-> en **§2.1**. Los **#6, #7 y #8** son la línea **empresa**, versión aterrizada
-> de la propuesta de IA (§2.2). Aún **no publicados** en el sitio.
+> en **§2.1**. Los **#6, #7 y #8** son la línea **empresa** (§2.2). El **#9** es
+> el **paquete estrella** (web+dominio+correo+Google+kit), detalle en **§2.3**.
+> Aún **no publicados** en el sitio (el #5, #6, #7 sí están vía sección web).
 
 - Mantención mensual: **Plan Cuidado $9.900/mes** · **Plan Activo $19.900/mes**.
 - Dominio propio: **$24.900/año** (+ configuración); `.cl` en NIC = **$9.990/año**.
@@ -263,6 +265,77 @@ La propuesta grande (migración legacy completa) queda como **meta**, no como
 catálogo: se puede vender **el día que exista** (a) un **equipo** de 2–3
 personas, (b) **certificaciones reales**, y (c) **experiencia demostrable** en
 2–3 proyectos acotados. Antes de eso, se vende **Fase 1** y se aprende.
+
+---
+
+## 2.3 🌟 Producto listo — **"Negocio digital completo"** (paquete)
+
+> **Creado 11-nov-2026.** Es la **idea A** del banco de ideas (§10.3): empaquetar
+> todo lo que **ya sabemos hacer** en un solo servicio de ticket alto. **No
+> cuesta más entregarlo** — son las mismas piezas que ya usamos para nosotros.
+> **Aún NO publicado en el sitio.**
+
+### En una línea (para el cliente)
+
+> **"Te dejo tu negocio listo para vender por internet: página web, dominio
+> propio, correo profesional y apareciendo en Google. Tú atiendes; yo dejo el
+> resto funcionando."**
+
+### Qué incluye (las 6 piezas)
+
+| # | Pieza | Qué significa |
+|---|---|---|
+| 1 | **Página web** | Landing o sitio hasta 5 páginas, con WhatsApp, rápida y para celular |
+| 2 | **Dominio propio** (`.cl`) | Su dirección real (ej. `sunegocio.cl`), registrada en NIC |
+| 3 | **Correo profesional** | `contacto@sunegocio.cl` (Zoho gratis), configurado |
+| 4 | **Google Business Profile** | Aparecer en Google Maps/búsqueda local |
+| 5 | **Search Console + sitemap** | Que Google indexe y lo encuentre |
+| 6 | **Kit de arranque** | 3 textos de venta (WhatsApp, bio, ficha) + guía de "qué hacer cuando llegue un cliente" |
+
+**Extras opcionales (se suman):**
+- Mantención mensual (**$29.900–$59.900/mes**, idea B).
+- Publicación de contenido (guías/blog) para SEO.
+- Correo con más casillas.
+
+### Precio
+
+| Opción | Precio | Incluye |
+|---|---|---|
+| **Negocio digital (landing)** | **$499.000** | Landing + dominio 1er año + correo + Google Business + Search Console + kit |
+| **Negocio digital (sitio 5 pág.)** | **$699.000** | Todo lo anterior + sitio de hasta 5 páginas |
+| **Renovación** (año 2+) | **$24.900/año** | Dominio + gestión (el resto sigue funcionando) |
+
+> **Por qué este precio y no $249.900:** el cliente no compra "una web"; compra
+> **"estoy en internet y me pueden encontrar"**. Un negocio local que aparece en
+> Google y tiene correo propio **vale más** que una página suelta. Y **casi no
+> cuesta más entregarlo** (ya dominamos las 6 piezas).
+
+### Cómo se vende (texto y estrategia)
+
+- **Ideal para:** negocio local que **no tiene nada** todavía (ni web, ni
+  dominio, ni aparece en Google) o que tiene una web vieja abandonada.
+- **CTA WhatsApp:** *"Hola, quiero dejar mi negocio listo para vender por
+  internet (web + dominio + correo + Google)."*
+- **Gancho:** *"en 1–2 semanas tu negocio aparece en Google, con página propia y
+  correo profesional. Tú no llenas ningún formulario: yo hago el trabajo
+  técnico."*
+- **Escalera de valor:** este paquete es la **puerta** para vender luego
+  mantención (B), sistemas (D) o auditorías (F).
+
+### Qué NO incluye (para no prometer de más)
+
+- **No** es tienda online con pagos (eso es la idea H, aparte).
+- **No** es posicionamiento garantizado en Google (el sitemap **ayuda**; el
+  SEO sostenido es contenido + tiempo).
+- **No** incluye fotos ni identidad visual (el cliente las aporta).
+- **No** incluye WhatsApp Business API ni bots (§10.1).
+
+### Pendiente para publicarlo
+
+- [ ] **Publicar en el sitio** como servicio de mayor ticket (`index.html` +
+      JSON-LD). Hoy el sitio llega hasta $499.000 (apps); este llega a $699.000.
+- [ ] **Cobrar** con parte adelantada (50% inicio, 50% entrega).
+- [ ] Validar con el primer cliente (pedir testimonio al terminar).
 
 ---
 
@@ -713,3 +786,43 @@ dedicado.**
 - **Migrar clientes a Linux** ("andaría como seda"). ⚠️ En salud NO se puede lo
   que corra SIGGES/Rayen (Windows-only). Ver `~/research/migracion-linux-clientes.md`.
 - **Bot de avisos propio** — descartado por riesgo de ban (H-87).
+
+### 10.3 Banco de ideas de ticket alto (brainstorming 11-nov-2026)
+
+> Ordenadas por **ticket × facilidad de vender**. Se marcan las **entregables
+> hoy** con lo que ya tenemos (Pi + MSI + web + soporte). **No son oferta
+> publicada** salvo que se diga.
+
+#### 🟢 Nivel 1 — Entregables YA, sin infraestructura nueva
+
+| # | Idea | Ticket | Estado |
+|---|---|---|---|
+| A | **Paquete "negocio digital completo"** (web+dominio+correo+Google Business+Search Console+textos) | **$499.000 – $699.000** | ✅ **producto listo** (§2.3) |
+| B | **Mantención con monitoreo** (vigilancia + respaldos + informe mensual) | **$29.900 – $59.900/mes** | 🔧 casi listo (scripts ya existen) |
+| C | **"PC que no se cae" para empresas** (diagnóstico+arreglo+informe+30 días garantía) | **$199.000 – $350.000** | ✅ caso `rai` probado |
+
+#### 🟡 Nivel 2 — Requieren algo más de trabajo
+
+| # | Idea | Ticket | Nota |
+|---|---|---|---|
+| D | **Panel/portal para colegios y pymes** (lista de curso, comunicaciones, inventario…) | **$800.000 – $2.000.000** | encaja en #5/#8 |
+| E | **Migración a Linux para empresas** (Windows 10 sin soporte) | **$500.000 – $1.500.000** | ⚠️ no donde corra SIGGES/Rayen |
+| F | **Auditoría de seguridad / respaldos** (¿sobrevive si muere un disco?) | **$400.000 – $900.000** | restic ya probado |
+
+#### 🔴 Nivel 3 — Cliente grande o tiempo
+
+| # | Idea | Ticket | Nota |
+|---|---|---|---|
+| G | **Consultoría técnica fraccional** (ser su "departamento de TI") | **$150.000 – $400.000/mes** | recurrente alto, exige disponibilidad |
+| H | **Integración de pagos en su web** (Mercado Pago/Webpay) | **$600.000 – $1.200.000** | aprender la integración una vez |
+| I | **Dominio + correo profesional para pymes** (como el nuestro) | **$99.000 – $149.000** | puerta de entrada a #1 y #4 |
+
+#### ❌ Descartadas (no vender)
+
+- **Migración de sistemas legacy llave en mano** — no hay equipo (ver §2.2).
+- **Bot de WhatsApp** — riesgo de ban, sin número dedicado (§10.1).
+- **Hosting/hardware/redes** — fuera del modelo 100% software.
+- **Soporte 24/7 / SLA** — un operador solo no aguanta.
+
+> **Apuesta recomendada (retorno/esfuerzo):** **A + B + C** se pueden vender
+> **esta semana** con lo que ya tenemos. D–I son para el próximo trimestre.
