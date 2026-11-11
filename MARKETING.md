@@ -665,3 +665,51 @@ a13          -> crond (runit) activo; pi --print / --mode json disponibles
 *Consolidado por Pi (nodo `a13`) el 05-nov-2026. Etapa 0 ejecutada el mismo día (PR #28). Si cambia un precio, un texto
 de venta o el estado SEO, **actualizar este archivo** — es la referencia que
 debe leer cualquier nodo antes de proponer ideas de marketing.*
+
+---
+
+## 10. Ideas a futuro (backlog — NO implementar sin decisión)
+
+> Cosas evaluadas y **postergadas**. Se guardan para cuando haya capacidad,
+> cliente o presupuesto. **No son oferta actual.**
+
+### 10.1 Chatbot / asistente de WhatsApp (idea de Meta, 11-nov-2026)
+
+**Qué es.** Un bot que atiende consultas y agenda por WhatsApp, 24/7.
+Meta propuso un kit ("chatbot_whatsapp_kit") con precios alineados
+($249.900 implementación + $29.900/mes).
+
+**Por qué NO ahora (riesgos reales):**
+
+1. **Requiere número DEDICADO nuevo.** Usar el `+56 9 3123 2000` personal en un
+   bot **arriesga ban del número** (Meta detecta automatización). La malla ya
+   evitó esto antes (H-87 del kit).
+2. **No es "pegar un token".** La **WhatsApp Cloud API** exige: cuenta **Meta
+   Business verificada**, número dedicado y aprobación. Además, solo se puede
+   responder dentro de **24 h** de un mensaje del cliente (o con plantillas
+   aprobadas en frío).
+3. **"Guardar en Google Sheets vía webhook" no existe así.** Sheets no recibe
+   webhooks: hay que usar **Google Apps Script Web App** o la **Sheets API**.
+4. **El "kit" que da Meta es un HTML de DEMO**, no un bot funcional. La demo se
+   ve linda; el producto real es otro.
+5. **Hosting 24/7:** el webhook debe estar en una URL pública (Render, Railway,
+   Fly.io o VPS). No basta local.
+
+**Versión aterrizada (si algún día se hace):**
+
+- **Asistente en la WEB** (widget de chat en el sitio) que responde FAQ y agenda
+  → **sin riesgo de ban**, entregable como parte del #5/#7.
+- El **bot de WhatsApp real** solo con **número dedicado** + Cloud API +
+  hosting, como proyecto aparte y más caro.
+
+**Si se decide hacerlo:** proyecto Node.js con Express (GET verificación / POST
+webhook), flujo con botones interactivos (Cotizar / Agendar / Trabajos /
+Humano), guardado de leads en `leads.json` (+ Sheets opcional vía Apps Script),
+derivación a humano, español chileno. **Construir cuando haya cliente y número
+dedicado.**
+
+### 10.2 Otras ideas postergadas
+
+- **Migrar clientes a Linux** ("andaría como seda"). ⚠️ En salud NO se puede lo
+  que corra SIGGES/Rayen (Windows-only). Ver `~/research/migracion-linux-clientes.md`.
+- **Bot de avisos propio** — descartado por riesgo de ban (H-87).
