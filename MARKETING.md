@@ -174,10 +174,28 @@ los días** para operar. Aplicaciones típicas:
 - **No admite, en la primera versión, apps móviles nativas** (iOS/Android): es
   web responsive (se usa en el navegador del teléfono).
 
+### Estrategia de validación — el "regalo" de Hormozi
+
+> **Regla del operador:** el primer caso del producto #5 se **regala**, igual
+> que se regaló la web de `matías`. La lógica (Hormozi, *$100M Offers*) es
+> **dar valor primero**: el caso gratis produce **testimonio + referidos +
+> caso de estudio**, que valen más que el primer cobro.
+
+- **`matías` / Aconcagua NO es cliente de pago** — es el **cliente gratuito**
+  de la web. Por eso **no** es "el candidato a quien cobrarle #5".
+- **Cómo se usa a `matías`:** como **prueba social y referente** (ya figura en
+  la web como "ejemplo real"). Si algún día se le ofrece el sistema, sería
+  **otro regalo acotado** (un módulo simple, ej. cotizador), a cambio de
+  **testimonio escrito + video corto + 2 referidos**.
+- **Candidato para el #5 de pago:** un cliente **nuevo** que ya tenga web con
+  nosotros (o que la compre junto con el sistema).
+
 ### Pendiente para publicarlo
 
-- [ ] **Validar** con un cliente real (candidato: `matías` electricista, que ya
-      tiene web; necesita cotizador/agenda).
+- [ ] **Validar** el producto #5 con **un caso** (puede ser regalado): se
+      construye un módulo simple, se entrega y se mide si el cliente lo usa.
+      El "caso de validación" ideal es **una pyme real con operación diaria**
+      (taller, consulta, constructora), **no** el `matías` gratuito como cobro.
 - [ ] Si valida: **agregar sección al sitio** (`index.html` + JSON-LD `Offer`)
       y una guía que atraiga el tema ("software a medida para pymes").
 - [ ] Actualizar `malla-memoria-comun.md` con el producto (una vez validado).
@@ -311,8 +329,10 @@ Contactos en `rustdesk-clientes/investigacion/macul-contactos-salud.md`.
       DNS en Netlify DNS. Guía: `CORREO-DOMINIO.md`.
 - [ ] **Google Business Profile** (Macul): categoría, horario, fotos, WhatsApp.
 - [ ] Revisar el sitio en **su celular** y decir qué se ve mal.
-- [ ] **Validar el producto nuevo (apps a medida, §2.1)** con un cliente real
-      (candidato: `matías`). Si valida → publicar sección en el sitio.
+- [ ] **Validar el producto nuevo (apps a medida, §2.1)**. El **primer caso se
+      regala** (Hormozi: dar primero) a cambio de **testimonio + referidos**;
+      `matías` ya es el cliente gratuito de la web (no se le cobra). Si valida →
+      publicar sección en el sitio.
 - [ ] Aprobar el **ciclo de automatización** (sección 8.6) y qué puede publicar
       el agente solo y qué pasa siempre por su revisión.
 
