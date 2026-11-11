@@ -240,6 +240,11 @@ los días** para operar. Aplicaciones típicas:
 - Mantención/acompañamiento opcional: **$49.900 – $99.900/mes**.
 - **Garantía:** 30 días por bugs de lo entregado (no por features nuevas).
 
+> 📄 **Entregable listo del #6 (auditoría):** `marketing/entregable-auditoria-codigo.md`
+> — índice del informe, cómo se cotiza por tamaño, reglas de oro y checklist de
+> entrega. Es el **primer paso recomendado** de la línea empresa: bajo riesgo
+> (solo lectura) y abre la puerta al #7 y #8.
+
 ### Reglas de oro para vender software grande
 
 1. **Nunca llave en mano de un sistema completo.** Vender **Fase 1 sola**
