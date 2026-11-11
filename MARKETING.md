@@ -76,9 +76,13 @@
 | 3 | **Android** (optimización / formateo con respaldo) | **$24.900** · **$29.900** | En Macul, solo software |
 | 4 | **Soporte remoto** (RustDesk + Tailscale, Windows/Linux) | **$18.000/hora** | Remoto, todo Chile |
 | 5 | **Sistemas y apps a medida** (agenda, clientes, cotizador…) — **NUEVO** | desde **$499.000** + **$29.900–49.900/mes** | 100% remoto |
+| 6 | **Auditoría de código + informe** — **NUEVO** | **$300.000 – $800.000** | Remoto |
+| 7 | **Automatización de un proceso** — **NUEVO** | **$500.000 – $1.500.000** | Remoto |
+| 8 | **Módulo nuevo en sistema existente** — **NUEVO** | **$800.000 – $2.000.000** | Remoto |
 
-> El **#5** es el producto más caro y la evolución natural del #1. Detalle
-> completo en **§2.1**. Aún **no está publicado** en el sitio (validación primero).
+> El **#5** es el producto más caro de la línea pyme (evolución del #1), detalle
+> en **§2.1**. Los **#6, #7 y #8** son la línea **empresa**, versión aterrizada
+> de la propuesta de IA (§2.2). Aún **no publicados** en el sitio.
 
 - Mantención mensual: **Plan Cuidado $9.900/mes** · **Plan Activo $19.900/mes**.
 - Dominio propio: **$24.900/año** (+ configuración); `.cl` en NIC = **$9.990/año**.
@@ -199,6 +203,61 @@ los días** para operar. Aplicaciones típicas:
 - [ ] Si valida: **agregar sección al sitio** (`index.html` + JSON-LD `Offer`)
       y una guía que atraiga el tema ("software a medida para pymes").
 - [ ] Actualizar `malla-memoria-comun.md` con el producto (una vez validado).
+
+---
+
+## 2.2 💼 Software para empresas — versión **aterrizada** (12-nov-2026)
+
+> **Origen:** una propuesta generada con IA (Gemini) planteaba vender
+> **"modernización de sistemas legacy con agentes"** a **$65.000 USD llave en
+> mano** (ISO 27001/SOC2, equipos, 12–16 semanas). **No es vendible con lo que
+> tenemos hoy** y varias afirmaciones serían **incumplibles o falsas**.
+> Esta sección es la **versión real**: mismo norte (software es el mayor
+> ticket), pero aterrizada a un solo operador + Pi.
+
+### Por qué la propuesta original NO se puede vender tal cual
+
+| Afirmación de la propuesta | Por qué no |
+|---|---|
+| "Paridad funcional al **100%**", cobertura "**>90%**", "**–60%** de tiempo" | Son **promesas medibles** que un cliente grande exige en contrato → penalidad/demanda si no se cumplen. Un legacy real **no** se migra en 12–16 semanas. |
+| "**ISO 27001 / SOC2**" | Eso **se certifica**, no se declara. Es auditoría de meses y miles de USD. Ponerlo en una propuesta es humo y **expone legalmente**. |
+| "Ejecución **local/VPC privada**, cero retención de código" | Falso con Pi/OpenRouter por defecto: el código **sale del perímetro** al llamar a la API. Para prometerlo haría falta un **modelo local** (no lo tenemos: el MSI no corre un LLM serio). |
+| "**$65.000 USD ≈ $60M CLP** llave en mano" | Un cliente que paga eso exige **empresa, referencias, seguro, equipo**. No encaja con un operador solo. |
+| "Pipeline de **4 agentes**" sobre el código del cliente | 12–16 semanas de dedicación casi full-time + soporte post-launch. **Sin el equipo, no se puede.** |
+
+> **Trampa central:** un LLM escribe esa propuesta en 30 segundos, pero **no
+> crea la empresa que la respalde.** Escribir es fácil; **entregar no existe.**
+
+### Los 3 productos SÍ vendibles (alcance fijo, riesgo controlado)
+
+| # | Producto | Qué es | Precio (CLP) | Plazo |
+|---|---|---|---|---|
+| **6** | **Auditoría de código + informe** | Documentar lo indocumentado, mapa de dependencias, deuda técnica y **riesgos**. Solo lectura, sin tocar producción | **$300.000 – $800.000** | 1–2 sem |
+| **7** | **Automatización de un proceso** | "Tu equipo hace esto a mano N horas/semana → lo automatizo" (reportes, avisos, carga de datos, respaldos) | **$500.000 – $1.500.000** | 2–4 sem |
+| **8** | **Módulo nuevo dentro de un sistema existente** | Reportes, integración, panel, sin tocar el *core* | **$800.000 – $2.000.000** | 3–6 sem |
+
+- Todos con **alcance cerrado por escrito** (qué sí, qué no) y **entrega verificada**.
+- Mantención/acompañamiento opcional: **$49.900 – $99.900/mes**.
+- **Garantía:** 30 días por bugs de lo entregado (no por features nuevas).
+
+### Reglas de oro para vender software grande
+
+1. **Nunca llave en mano de un sistema completo.** Vender **Fase 1 sola**
+   (auditoría + informe). Con los datos reales, **reevaluar** si el resto es viable.
+2. **No prometer "100%" ni porcentajes** que no se puedan medir y garantizar.
+3. **No declarar certificaciones** (ISO/SOC2). Máximo: *"buenas prácticas de
+   confidencialidad"* + **NDA simple**.
+4. **Privacidad de código:** trabajarlo **en el equipo del cliente** o en el
+   nuestro con autorización escrita; **no** prometer "cero retención" si se usa
+   API externa. Si el cliente lo exige, ahí **se evalúa un modelo local**.
+5. **Un proyecto por vez** hasta tener más capacidad (un operador solo).
+
+### Cómo se ve el techo aspiracional (a 6–12 meses)
+
+La propuesta grande (migración legacy completa) queda como **meta**, no como
+catálogo: se puede vender **el día que exista** (a) un **equipo** de 2–3
+personas, (b) **certificaciones reales**, y (c) **experiencia demostrable** en
+2–3 proyectos acotados. Antes de eso, se vende **Fase 1** y se aprende.
 
 ---
 
@@ -338,6 +397,8 @@ Ordenadas por relación **impacto / esfuerzo**:
 | Sitio corporativo pyme | $400.000 – $900.000 | — |
 | Tienda online | $500.000 – $800.000+ | — |
 | **Software / app a medida** | **$500.000 – $1.500.000+** | **desde $499.000** (+ $29.900–49.900/mes) |
+| **Auditoría de código legacy** | **$500.000 – $2.000.000+** | **$300.000 – $800.000** |
+| **Migración legacy completa (llave en mano)** | **$30M – $60M CLP+** (equipos, meses) | ❌ **no vendible hoy** (ver §2.2) |
 | Mantención web mensual | $30.000 – $150.000 | **$9.900 / $19.900** |
 | Dominio `.cl` | $9.990/año (NIC) | $24.900/año al cliente |
 
