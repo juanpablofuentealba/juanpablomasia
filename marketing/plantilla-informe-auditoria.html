@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<title>Informe de auditoría de código — {{CLIENTE}}</title>
+<style>
+  /* TODO PDF VA EN TAMAÑO CARTA (Letter), NUNCA A4. Chile usa carta.
+     Verificar con: magick identify 'salida.pdf[0]'  -> debe dar 612x792. */
+  @page { size: Letter; margin: 16mm 15mm 18mm 15mm; }
+
+  :root{
+    --tinta:#1a1f2b; --suave:#5b6472; --linea:#dfe3ea;
+    --acento:#1f5fa8; --verde:#1a7f4b; --amar:#b58100; --rojo:#b3261e;
+    --fondo:#f6f8fb;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    font-family:-apple-system,''Segoe UI'',Roboto,Helvetica,Arial,sans-serif;
+    color:var(--tinta); font-size:10.5pt; line-height:1.5; margin:0;
+  }
+  h1{ font-size:20pt; margin:0 0 2mm; letter-spacing:-.3px; }
+  h2{
+    font-size:13pt; color:var(--acento); margin:9mm 0 3mm;
+    border-bottom:2px solid var(--linea); padding-bottom:1.5mm;
+  }
+  h3{ font-size:11pt; margin:5mm 0 2mm; }
+  p{ margin:0 0 2.5mm; }
+  small,.meta{ color:var(--suave); font-size:9pt; }
+
+  /* Portada */
+  .portada{
+    border:1px solid var(--linea); border-left:5px solid var(--acento);
+    background:var(--fondo); padding:7mm; border-radius:3px; margin-bottom:6mm;
+  }
+  .portada .marca{ font-weight:700; color:var(--acento); letter-spacing:.5px; font-size:10pt; }
+  .portada table{ width:100%; border-collapse:collapse; margin-top:4mm; font-size:9.5pt; }
+  .portada td{ padding:1mm 0; vertical-align:top; }
+  .portada td:first-child{ color:var(--suave); width:38mm; }
+
+  /* Semáforo */
+  .semaforo{ display:flex; gap:4mm; margin-top:4mm; }
+  .sem{ flex:1; text-align:center; padding:3mm; border-radius:3px; font-size:9pt; font-weight:600; }
+  .sem.verde{ background:#e6f4ec; color:var(--verde); }
+  .sem.amar{ background:#fdf3d9; color:var(--amar); }
+  .sem.rojo{ background:#fbe9e7; color:var(--rojo); }
+
+  /* Tablas */
+  table.datos{ width:100%; border-collapse:collapse; margin:3mm 0; font-size:9.5pt; }
+  table.datos th, table.datos td{
+    border:1px solid var(--linea); padding:2mm 2.5mm; text-align:left; vertical-align:top;
+  }
+  table.datos th{ background:var(--fondo); font-weight:600; }
+  table.datos tr:nth-child(even) td{ background:#fafbfd; }
+  .p1{ color:var(--rojo); font-weight:700; }
+  .p2{ color:var(--amar); font-weight:600; }
+  .p3{ color:var(--suave); }
+
+  blockquote{
+    margin:3mm 0; padding:3mm 4mm; background:var(--fondo);
+    border-left:3px solid var(--acento); color:var(--suave); font-size:10pt;
+  }
+  ul{ margin:0 0 3mm; padding-left:5mm; }
+  li{ margin-bottom:1.2mm; }
+
+  .pie{
+    margin-top:8mm; padding-top:3mm; border-top:1px solid var(--linea);
+    color:var(--suave); font-size:8.5pt; text-align:center;
+  }
+  .salto{ page-break-before:always; }
+  .no-cortar{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+
+<!-- ============ PORTADA + RESUMEN EJECUTIVO ============ -->
+<section class="portada no-cortar">
+  <div class="marca">JUAN PABLO + IA · Servicios de software</div>
+  <h1>Informe de auditoría de código</h1>
+  <p class="meta">Diagnóstico de arquitectura, riesgos y deuda técnica — solo lectura.</p>
+
+  <table>
+    <tr><td>Cliente</td><td><b>{{CLIENTE}}</b></td></tr>
+    <tr><td>Sistema auditado</td><td>{{SISTEMA}}</td></tr>
+    <tr><td>Alcance</td><td>{{ALCANCE}}</td></tr>
+    <tr><td>Fecha</td><td>{{FECHA}}</td></tr>
+    <tr><td>Autor</td><td>Juan Pablo Fuentealba Bizama — juanpabloia.cl</td></tr>
+  </table>
+
+  <div class="semaforo">
+    <div class="sem verde">Estabilidad: {{SEM_ESTABILIDAD}}</div>
+    <div class="sem amar">Mantenibilidad: {{SEM_MANTENIBILIDAD}}</div>
+    <div class="sem rojo">Riesgo: {{SEM_RIESGO}}</div>
+  </div>
+</section>
+
+<h2>Resumen ejecutivo</h2>
+<p>{{RESUMEN_EJECUTIVO}}</p>
+
+<h3>Las 3 conclusiones principales</h3>
+<ol>
+  <li>{{CONCLUSION_1}}</li>
+  <li>{{CONCLUSION_2}}</li>
+  <li>{{CONCLUSION_3}}</li>
+</ol>
+
+<blockquote>
+  Este informe es de <b>solo lectura</b>. No se modificó ni se ejecutó ningún
+  cambio sobre el sistema en producción. Las recomendaciones se presupuestan
+  por separado.
+</blockquote>
+
+<!-- ============ 1. ALCANCE Y MÉTODO ============ -->
+<h2>1. Alcance y método</h2>
+<table class="datos">
+  <tr><th>Se revisó</th><th>No se revisó</th></tr>
+  <tr><td>{{REVISADO}}</td><td>{{NO_REVISADO}}</td></tr>
+</table>
+<p><b>Cómo se hizo:</b> {{METODO}}</p>
+
+<!-- ============ 2. ARQUITECTURA ACTUAL ============ -->
+<h2>2. Arquitectura actual</h2>
+<p>{{ARQUITECTURA_DESCRIPCION}}</p>
+<table class="datos">
+  <tr><th>Componente</th><th>Tecnología</th><th>Versión</th><th>Antigüedad</th></tr>
+  {{FILAS_TECNOLOGIAS}}
+</table>
+<blockquote>
+  Mapa de dependencias completo en el anexo (diagrama).
+</blockquote>
+
+<!-- ============ 3. LÓGICA DE NEGOCIO ============ -->
+<div class="salto"></div>
+<h2>3. Lógica de negocio extraída</h2>
+<p>Reglas que hoy viven solo en el código, escritas en español claro:</p>
+{{REGLAS_NEGOCIO}}
+
+<!-- ============ 4. RIESGOS ============ -->
+<h2>4. Registro de riesgos</h2>
+<table class="datos">
+  <tr><th>Prioridad</th><th>Riesgo</th><th>Dónde</th><th>Impacto</th></tr>
+  {{FILAS_RIESGOS}}
+</table>
+
+<!-- ============ 5. DEUDA TÉCNICA ============ -->
+<h2>5. Deuda técnica</h2>
+<p>{{DEUDA_TECNICA}}</p>
+<ul>
+  {{ITEMS_DEUDA}}
+</ul>
+
+<!-- ============ 6. RECOMENDACIONES ============ -->
+<div class="salto"></div>
+<h2>6. Recomendaciones priorizadas</h2>
+<h3>Corto plazo (0–1 mes)</h3>
+<ul>{{RECOM_CORTO}}</ul>
+<h3>Mediano plazo (1–3 meses)</h3>
+<ul>{{RECOM_MEDIANO}}</ul>
+<h3>Estructural (largo plazo)</h3>
+<ul>{{RECOM_LARGO}}</ul>
+
+<!-- ============ 7. ANEXOS ============ -->
+<h2>7. Anexos</h2>
+<p><b>Archivos revisados:</b> {{ANEXO_ARCHIVOS}}</p>
+<p><b>Glosario:</b> {{ANEXO_GLOSARIO}}</p>
+
+<div class="pie">
+  Informe de auditoría de código · {{CLIENTE}} · {{FECHA}}<br>
+  Juan Pablo Fuentealba Bizama · "Juan Pablo + IA" · juanpabloia.cl<br>
+  Documento confidencial. Preparado exclusivamente para {{CLIENTE}}.
+</div>
+
+</body>
+</html>
