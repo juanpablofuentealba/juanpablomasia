@@ -36,7 +36,8 @@ Publicado en Netlify: https://juanpablomasia.netlify.app/
 ├── HALLAZGOS.md                    # H-01..H-15: auditoría técnica verificada
 ├── PENDIENTES-SEO.md               # Pendientes de posicionamiento + dominio .cl
 ├── MARKETING.md                    # ⭐ Resumen consolidado de marketing orgánico
-├── DOMINIO-PENDIENTE.md            # Pasos para conectar juanpablomasia.cl
+├── DOMINIO-PENDIENTE.md            # Pasos para conectar juanpabloia.cl
+├── CORREO-DOMINIO.md               # Correo propio con Zoho (Netlify + DNS)
 ├── skills/marketing-juanpablo/     # Skill de Pi: voz, precios y cumplimiento
 └── bin/
     ├── generar-sitemap.sh          # sitemap.xml con <lastmod> real (--check)
@@ -49,8 +50,11 @@ Publicado en Netlify: https://juanpablomasia.netlify.app/
 - **`MARKETING.md`** — ⭐ **empezar por acá**: resumen consolidado de
   publicidad y marketing orgánico (oferta, estado SEO medido, las 4 palancas,
   activos, precios de mercado y checklist de pendientes).
-- **`DOMINIO-PENDIENTE.md`** — todo listo para `juanpablomasia.cl`: qué ya está
+- **`DOMINIO-PENDIENTE.md`** — todo listo para `juanpabloia.cl`: qué ya está
   hecho por el agente y qué falta hacer a mano (comprar + conectar en Netlify).
+- **`CORREO-DOMINIO.md`** — correo con dominio propio (`contacto@juanpabloia.cl`)
+  usando **Netlify + Zoho gratis**: registros MX/SPF/DKIM, errores comunes y
+  cómo replicarlo para clientes.
 - **`skills/marketing-juanpablo/`** — skill de Pi con la voz de la marca, precios
   vigentes y checklist de cumplimiento (Ley 19.496). Instalar con
   `./bin/instalar-skill.sh --malla`.

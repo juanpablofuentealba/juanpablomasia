@@ -119,3 +119,13 @@ Cuando `https://juanpabloia.cl` ya responda:
   `macultech.cl` también estaban libres al 01-nov-2026. Pero `juanpabloia.cl`
   es **mejor a largo plazo**: la marca personal sirve para todos los servicios
   (web, PC, Android, remoto), no solo para Macul.
+
+---
+
+## Después de conectar el dominio: correo propio
+
+Con el dominio ya en Netlify se puede tener **`contacto@juanpabloia.cl`** gratis
+(plan gratuito de Zoho). No es obligatorio para la web, pero da imagen
+profesional y se puede ofrecer como extra a clientes.
+
+👉 Guía completa y errores a evitar: **`CORREO-DOMINIO.md`**.
