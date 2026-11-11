@@ -39,21 +39,23 @@
 ## 1. Lo esencial en 10 líneas
 
 - Marca del sitio: **"Juan Pablo + IA"**. URL viva:
-  **https://juanpablomasia.netlify.app/** (ver sección 0: `cachyos-chile` es
-  solo el repo; su URL vieja da **404**).
-- El sitio **está publicado y sano** (HTTP 200, Brotli, HTTPS+HSTS, ~0,4 s de
-  carga, 5 páginas estáticas).
+  **https://juanpabloia.cl/** (dominio propio desde el 11-nov-2026; el
+  `.netlify.app` quedó como 301).
+- El sitio **está publicado y sano** (HTTPS con Let's Encrypt propio, Brotli,
+  HSTS, ~0,4 s de carga, 5+ páginas estáticas).
 - El **on-page está bien resuelto**: 1 H1, meta description de 161 caracteres,
   canonical, JSON-LD `LocalBusiness` (9 ofertas) + `FAQPage` (13 preguntas),
   `sitemap.xml` y `robots.txt` correctos.
 - **El problema no es la web, es la distribución:** el negocio depende de
-  **Google orgánico + WhatsApp**. Sin **Search Console** ni **dominio propio**,
-  el sitio compite con las manos atadas.
-- **Las dos palancas grandes siguen pendientes:** (1) alta en **Google Search
-  Console**, (2) **dominio `.cl` propio**: **`juanpabloia.cl`**, verificado
-  **libre** en NIC Chile (05-nov-2026).
-- **IndexNow** (Bing/Yandex) está armado y **falla con 403** por ser subdominio
-  `.netlify.app`: se activa solo cuando haya dominio propio.
+  **Google orgánico + WhatsApp**.
+- **Dominio propio ✅ HECHO (11-nov-2026):** **`juanpabloia.cl`** vivo, con
+  HTTPS, 301 desde el `.netlify.app` y badge de Netlify eliminado.
+- **Lo que falta ahora es `Search Console`:** dar de alta la propiedad, enviar
+  el sitemap y pedir indexación. Es la palanca nº 1 pendiente.
+- **IndexNow** (Bing/Yandex) ya debería funcionar con el dominio propio (antes
+  daba **403** por ser subdominio `.netlify.app`): verificar en el próximo deploy.
+- **Producto nuevo (11-nov):** **Sistemas y apps a medida desde $499.000**
+  (ver **§2.1**) — el producto de mayor ticket; aún no publicado en el sitio.
 - **Todo el tráfico orgánico de las guías es invisible:** GA4 está **solo en la
   home**; las 4 subpáginas no tienen Analytics.
 - **Falta `404.html`** propia y **`lastmod`** en el sitemap (dos arreglos de
@@ -65,7 +67,7 @@
 
 ---
 
-## 2. La oferta que se publicita (los 4 servicios, en orden de valor)
+## 2. La oferta que se publicita (los servicios, en orden de valor)
 
 | # | Servicio | Precio | Modalidad |
 |---|---|---|---|
@@ -73,6 +75,10 @@
 | 2 | **PC presencial en Macul** (formateo + CachyOS + optimización) | **$44.900** (visita incluida) · **+$19.900** fuera de Macul | Presencial |
 | 3 | **Android** (optimización / formateo con respaldo) | **$24.900** · **$29.900** | En Macul, solo software |
 | 4 | **Soporte remoto** (RustDesk + Tailscale, Windows/Linux) | **$18.000/hora** | Remoto, todo Chile |
+| 5 | **Sistemas y apps a medida** (agenda, clientes, cotizador…) — **NUEVO** | desde **$499.000** + **$29.900–49.900/mes** | 100% remoto |
+
+> El **#5** es el producto más caro y la evolución natural del #1. Detalle
+> completo en **§2.1**. Aún **no está publicado** en el sitio (validación primero).
 
 - Mantención mensual: **Plan Cuidado $9.900/mes** · **Plan Activo $19.900/mes**.
 - Dominio propio: **$24.900/año** (+ configuración); `.cl` en NIC = **$9.990/año**.
@@ -88,6 +94,93 @@
 
 > El detalle de la oferta y su relación con la malla vive en
 > `rustdesk-clientes/malla-memoria-comun.md` → *"🌐 El negocio en línea"*.
+
+---
+
+## 2.1 🆕 Producto NUEVO — **Sistemas y aplicaciones a medida** (el más caro del menú)
+
+> **Decidido 11-nov-2026.** Es la **evolución natural** del servicio de páginas
+> web y el producto de **mayor ticket** que la malla puede entregar con calidad
+> real. **Todavía NO está en el sitio** (primero se valida con un cliente).
+
+### Qué es (en una línea para el cliente)
+
+> **"Si tu página web ya no te basta, te armo el sistema que ordena tu
+> negocio: agenda, clientes, cotizador o control de stock, en tu navegador y
+> con tu propia marca."**
+
+No es una landing ni una tienda: es **software web que el cliente usa todos
+los días** para operar. Aplicaciones típicas:
+
+- **Agenda / reservas** (talleres, profesionales, consultas, clases).
+- **Ficha de clientes** (quién es, qué se le hizo, cuándo vuelve).
+- **Cotizador / presupuestos** que arma el PDF solo.
+- **Control de stock / inventario** con alertas de reposición.
+- **Panel de pedidos** o de trabajos en curso.
+- **Facturación simple** o registro de pagos (sin integrar SII, solo control).
+
+### Precio (el más alto del catálogo)
+
+| Pieza | Precio | Notas |
+|---|---|---|
+| **App a medida (simple)** | **desde $499.000** | 1 módulo operativo, login, base de datos, panel administrable |
+| **App a medida (con 2–3 módulos)** | **$790.000 – $1.190.000** | ej. clientes + agenda + cotizador |
+| **Mantención mensual** | **$29.900 – $49.900/mes** | hosting, respaldos, cambios, soporte |
+| **Capacitación** | **incluida** (1 sesión + video corto) | baja la reincidencia de dudas |
+
+> **Por qué este precio:** en Chile el software a medida parte en
+> **$500.000–$1.500.000** (ver §6). Con IA el costo de **producción** cae mucho
+> para nosotros, pero **el valor para el cliente no baja**: paga por "me
+> resuelve el proceso", no por las líneas de código.
+
+### Qué incluye la entrega
+
+- Aplicación web publicada en **tu dominio** (`.cl`, con HTTPS).
+- **Base de datos** y respaldo automático.
+- **Manual de uso** corto + **sesión de capacitación** (con video).
+- **30 días de garantía** por bugs de lo entregado (no por features nuevas).
+- **Revisión con egm/Goldfish** antes de entregar (H-91): el documento y el
+  diseño se revisan adversarialmente. Es un filtro de calidad que casi nadie da.
+
+### Cómo lo entrega la malla (por qué podemos)
+
+- **Pi (en el MSI)** desarrolla el código y el diseño; el MSI tiene RAM/disco de
+  sobra y el flujo `ssh msi-operador 'pi -p ...'` ya está montado.
+- **egm/Goldfish** (H-91) revisa la especificación y detecta contradicciones.
+- **Netlify** ya es nuestro hosting (dominio + HTTPS + deploy automático).
+- **Restic** ya está configurado para respaldos (regla de respaldo de clientes).
+- **Informes en PDF** (Chromium en el MSI), tamaño carta.
+
+### Cómo se vende (texto y estrategia)
+
+- **Puerta de entrada:** el cliente que **ya** tiene página web y pide "algo
+  más". Se le ofrece como **evolución**: *"tu web capta, el sistema administra".*
+- **CTA:** WhatsApp, mensaje precargado: *"Hola, quiero un sistema para ordenar
+  mi negocio (agenda, clientes o cotizador)"* → **cotización** (no precio fijo
+  al vuelo: cada app se cotiza).
+- **Gancho comercial:** *"te lo dejo funcionando y te enseño a usarlo; tu
+  información queda respaldada en tu propio sistema, no en un cuaderno."*
+- **Recurrente:** la **mantención $29.900–$49.900/mes** es el premio a largo
+  plazo (ingreso predecible).
+
+### Límites honestos (lo que NO prometemos)
+
+- **No vendemos más de lo que podemos mantener.** Prioridad: **1–2 clientes**
+  bien atendidos antes que muchos con soporte flojo (un bug mal resuelto se
+  come el día de un solo operador).
+- **No es un ERP integral** (no contabilidad completa, no SII) en la versión
+  inicial.
+- **No es soporte 24/7.** Horario definido y canal único (WhatsApp).
+- **No admite, en la primera versión, apps móviles nativas** (iOS/Android): es
+  web responsive (se usa en el navegador del teléfono).
+
+### Pendiente para publicarlo
+
+- [ ] **Validar** con un cliente real (candidato: `matías` electricista, que ya
+      tiene web; necesita cotizador/agenda).
+- [ ] Si valida: **agregar sección al sitio** (`index.html` + JSON-LD `Offer`)
+      y una guía que atraiga el tema ("software a medida para pymes").
+- [ ] Actualizar `malla-memoria-comun.md` con el producto (una vez validado).
 
 ---
 
@@ -190,6 +283,7 @@ Ordenadas por relación **impacto / esfuerzo**:
 | Sitio de servicios | $350.000 – $550.000 | **$249.900** |
 | Sitio corporativo pyme | $400.000 – $900.000 | — |
 | Tienda online | $500.000 – $800.000+ | — |
+| **Software / app a medida** | **$500.000 – $1.500.000+** | **desde $499.000** (+ $29.900–49.900/mes) |
 | Mantención web mensual | $30.000 – $150.000 | **$9.900 / $19.900** |
 | Dominio `.cl` | $9.990/año (NIC) | $24.900/año al cliente |
 
@@ -209,12 +303,16 @@ Contactos en `rustdesk-clientes/investigacion/macul-contactos-salud.md`.
 ## 7. Pendientes de marketing (checklist accionable)
 
 **Operador (no delegable):**
-- [ ] Comprar **`juanpabloia.cl`** en NIC Chile (RUT + tarjeta, $9.990/año).
-      ⚠️ Verificado LIBRE el 05-nov-2026. Pasos: **`DOMINIO-PENDIENTE.md`**.
+- [x] Comprar **`juanpabloia.cl`** en NIC Chile — **hecho 10-nov-2026**.
+      ✅ Dominio vivo (11-nov): HTTPS, 301 y badge fuera. Ver `DOMINIO-PENDIENTE.md`.
 - [ ] Alta en **Google Search Console** (verificación por GA4) + enviar sitemap
-      + solicitar indexación de las 5 URLs.
+      + solicitar indexación de las 5 URLs. ← **palanca nº 1 pendiente**.
+- [ ] **Correo propio `contacto@juanpabloia.cl`** (Zoho gratis): los 6 registros
+      DNS en Netlify DNS. Guía: `CORREO-DOMINIO.md`.
 - [ ] **Google Business Profile** (Macul): categoría, horario, fotos, WhatsApp.
 - [ ] Revisar el sitio en **su celular** y decir qué se ve mal.
+- [ ] **Validar el producto nuevo (apps a medida, §2.1)** con un cliente real
+      (candidato: `matías`). Si valida → publicar sección en el sitio.
 - [ ] Aprobar el **ciclo de automatización** (sección 8.6) y qué puede publicar
       el agente solo y qué pasa siempre por su revisión.
 
@@ -224,8 +322,16 @@ Contactos en `rustdesk-clientes/investigacion/macul-contactos-salud.md`.
 - [x] **`lastmod`** en el sitemap (H-07) — hecho 05-nov-2026.
 - [x] **`llms.txt`** y `author` real en el JSON-LD — hecho 05-nov-2026.
 - [ ] Ejecutar la **decisión A+B del hero** (B6-bis) y validar `#modalidades`.
-- [ ] Al tener dominio: conectar en Netlify, 301 desde el `.netlify.app`,
-      actualizar `canonical`/`og:url`/`sitemap`/JSON-LD, y **reintentar IndexNow**.
+- [x] **Dominio propio (11-nov-2026):** `juanpabloia.cl` conectado, 301 desde el
+      `.netlify.app`, 89 URLs actualizadas, HTTPS y badge fuera (PRs #52–#57).
+      → **Pendiente menor:** verificar **IndexNow** en el próximo deploy con el
+      dominio propio (antes daba 403).
+- [ ] **Publicar el producto nuevo (apps a medida, §2.1)** en el sitio *si el
+      operador valida con un cliente* (`index.html` + JSON-LD `Offer` + guía).
+- [ ] Quitar `NETLIFY_BADGE=false` de `netlify.toml` (opcional; el panel ya
+      resolvió el badge).
+- [ ] Actualizar las **URLs viejas del host** en los `.md` de docs a
+      `juanpabloia.cl` (README, HALLAZGOS).
 - [x] **Guía nº 5 publicada 05-nov-2026:** *"Mi PC se apaga solo: 7 causas y cómo
       saber cuál es"* → `/pc-se-apaga-solo/`. Es el tema que **más gente busca**
       y el que corresponde al servicio que aún no se vende.
