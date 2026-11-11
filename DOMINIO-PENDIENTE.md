@@ -1,7 +1,13 @@
 # Dominio `juanpabloia.cl` — todo listo, falta tu mano
 
-> **Estado al 10-nov-2026.** El dominio elegido es **`juanpabloia.cl`**.
-> Verificado **LIBRE** en el whois de NIC Chile (`no existe`, 10-nov-2026).
+> **Estado al 10-nov-2026: DOMINIO COMPRADO.** `juanpabloia.cl` fue adquirido en
+> NIC Chile. **El código del sitio ya quedó apuntando a `juanpabloia.cl`**
+> (las 89 URLs del repo se cambiaron y la redirección 301 quedó activa en
+> `netlify.toml`). **Falta conectar el dominio en Netlify (paso 3, requiere tu
+> login) y que propague el DNS.** Hasta que eso pase, la URL viva sigue siendo
+> `https://juanpablomasia.netlify.app/`.
+>
+> Antes: verificado **LIBRE** en el whois de NIC Chile (`no existe`, 10-nov-2026).
 >
 > **Por qué `juanpabloia` y no `juanpablomasia` (decisión del operador,
 > 10-nov-2026):** `juanpablomasia` (= *Juan Pablo + IA*) **se lee como apellido
@@ -53,18 +59,21 @@
 > 💡 Puedes pagar más de un año de una vez (más barato a largo plazo).
 > Al cliente le cobras $24.900/año, así que el margen cubre renovación + gestión.
 
-### Paso 2 — Decime "listo" (1 min)
+### Paso 2 — Cambio de URLs en el código ✅ HECHO (10-nov-2026)
 
-Con el dominio comprado, **respóndeme "dominio comprado"**. Yo hago:
+El agente corrió `./bin/cambiar-dominio.sh juanpabloia.cl`:
 
-- Corro `./bin/cambiar-dominio.sh juanpabloia.cl` (las 66 URLs).
-- Activo la redirección 301 en `netlify.toml`.
-- Regenero `sitemap.xml` y `llms.txt`.
-- Abro PR, verifico en el deploy preview y mergeo.
+- ✅ Cambió **89 apariciones** del host (antes se decía 66: el script tenía una
+  lista fija de archivos y se le escapaban páginas nuevas — **bug corregido**,
+  ahora descubre los archivos solo).
+- ✅ Activó la redirección 301 en `netlify.toml`.
+- ✅ Regeneró `sitemap.xml` y `llms.txt`.
+- ✅ Verificado: **0** apariciones del host viejo en el código.
 
-> ⚠️ **Importante:** el cambio de URLs **no hace daño antes de tiempo** —
-> `juanpabloia.cl` da error de DNS hasta que esté conectado. Por eso lo
-> hacemos **después** de conectar el dominio, no antes.
+> ⚠️ El cambio de URLs **no hace daño aunque el dominio aún no esté conectado**:
+> `juanpabloia.cl` da error de DNS hasta que se conecte en Netlify. Por eso el
+> **paso 3 (Netlify) es el que falta y requiere tu login**. Una vez que el
+> dominio responda, el sitio ya está listo y no hay que tocar nada más.
 
 ### Paso 3 — Conectar el dominio en Netlify (5 min, requiere tu login)
 
