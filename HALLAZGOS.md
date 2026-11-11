@@ -5,6 +5,10 @@
 > Cada hallazgo trae el dato real medido (no supuestos).
 >
 > Documento hermano: `PENDIENTES-SEO.md` (lo que falta hacer + dominio .cl).
+>
+> **Numeración:** esta serie (H-xx) es **propia de ESTE repo** (el sitio). No
+> tiene relación con los `H-xx` de `rustdesk-wlan-ssh-pi/docs/hallazgos.md`
+> (el kit), que numeran aparte. Aquí: H-01..H-15 (sitio) → H-16 en adelante.
 
 ---
 
@@ -353,7 +357,7 @@ que el automático esté vivo.
 
 ---
 
-## H-90 · `cambiar-dominio.sh` fallaba EN SILENCIO: flag `sed -F` inexistente + lista fija de archivos
+## H-16 · `cambiar-dominio.sh` fallaba EN SILENCIO: flag `sed -F` inexistente + lista fija de archivos
 
 **Fecha:** 10-nov-2026 (a16, al conectar el dominio `juanpabloia.cl`).
 
@@ -407,9 +411,9 @@ no **reemplazadas** — por eso mintió.
 
 ---
 
-## H-91 · Activar el 301 al dominio ANTES de que el DNS resuelva deja el sitio INACCESIBLE
+## H-17 · Activar el 301 al dominio ANTES de que el DNS resuelva deja el sitio INACCESIBLE
 
-**Fecha:** 10-nov-2026, minutos después de H-90.
+**Fecha:** 10-nov-2026, minutos después de H-16.
 
 **Síntoma.** Tras el cambio de URLs se activó el 301 del `.netlify.app` al
 dominio nuevo en `netlify.toml`. Al verificar:
@@ -443,7 +447,7 @@ de conexión. Verificar con `curl` **antes** de activar.
 
 ---
 
-## H-92 · Las URLs viejas de los `.md` se actualizan AL FINAL, no en el cambio
+## H-18 · Las URLs viejas de los `.md` se actualizan AL FINAL, no en el cambio
 
 **Fecha:** 10-nov-2026.
 
