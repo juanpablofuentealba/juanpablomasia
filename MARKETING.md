@@ -283,13 +283,49 @@ Ordenadas por relación **impacto / esfuerzo**:
 
 | Activo | Dónde | Uso |
 |---|---|---|
-| **Sitio comercial** "Juan Pablo + IA" | repo `juanpablomasia` → Netlify (`juanpablomasia.netlify.app`) | Escaparate principal, precios a la vista |
+| **Sitio comercial** "Juan Pablo + IA" | repo `juanpablomasia` → Netlify (`juanpabloia.cl`) | Escaparate principal, precios a la vista |
 | **4 guías orgánicas** (CachyOS, Linux vs Windows, revivir PC viejo, índice) | `/guias/`, `/como-instalar-cachyos/`, `/linux-vs-windows/`, `/revivir-pc-viejo-con-linux/` | Imán de tráfico: responden búsquedas reales de gente que **ya** busca soluciones Linux |
-| **Ejemplo real publicado** | `matias-electricista.netlify.app` (cliente `matías`, electricista) | Prueba social en la sección "¿Quién está detrás?" (`#quien-soy`) |
+| **📣 3 clientes gratuitos** (estrategia Hormozi: **dar valor primero**) | ver **§5.1** abajo | Testimonios, casos de estudio y **referidos**. Son la prueba social del negocio |
+| **Ejemplo real publicado** | `matias-electricista.netlify.app` (cliente `matías`, construcción) | Prueba social en la sección "¿Quién está detrás?" (`#quien-soy`) |
 | **Kit público (vitrina)** | `rustdesk-wlan-ssh-pi-vitrina` | Marketing del *método*, sin datos de clientes |
 | **Repos públicos técnicos** | `zte-blade-a54-debloat`, `android-debloat-log`, `pi-android-pack`, `antiacaros-uv`, `commitpilot` | Backlinks naturales y autoridad técnica del autor |
 | **Pack de contenido dropshipping** | `~/dev/pi-dropshipping-pack/`, `~/contenido/` | **Otra línea de negocio** (TikTok/UGC, ads, WhatsApp). Plantillas de ganchos, ángulos y cumplimiento Ley 19.496 **reutilizables** para promocionar los servicios técnicos. |
 | **WhatsApp** (`wa.me/56931232000`) | Todos los CTA | Canal de conversión real: el sitio no vende, **agenda** |
+
+---
+
+## 5.1 Los 3 clientes gratuitos (regalo / "dar valor primero")
+
+> **Estrategia del operador:** los primeros clientes se atienden **gratis**
+> (Hormozi, *$100M Offers*: dar valor antes de cobrar). A cambio se busca
+> **testimonio + caso de estudio + referidos**, no dinero. Son **3**, en rubros
+> distintos, y cada uno aporta algo distinto.
+
+| # | Cliente | Rubro / servicio | Estado | Qué falta (compromiso) | Valor que aporta |
+|---|---|---|---|---|---|
+| 1 | **Claudia** (madre de `rai`) | **Soporte remoto** — Windows (notebook HP Omen) | ✅ **Terminado** | — (ya entregó) | **Testimonio real publicado** (`#testimonios`) |
+| 2 | **Andrea** (vecina, Macul) | **Instalación CachyOS** — Lenovo Yoga 330 de regalo a su hijo | ✅ **Equipo entregado** (07-nov) | Seguimiento (¿lo usa? ¿problemas?) + **testimonio** | Caso de **migración a Linux** real y cercano |
+| 3 | **Matías** / Aconcagua | **Página web** (constructora) | ✅ Web publicada | ⚠️ **Matías NO se compromete al 100%**: no tiene tiempo. El sitio está listo pero le falta que lo use/difunda | **Ejemplo real** ya en la web + guía para otros rubros |
+
+### Qué hacer con cada uno (acciones)
+
+- **Claudia:** ✔ nada pendiente. Su testimonio ya está en la web. Si algún día
+  necesita algo, atenderla bien (es la referencia nº 1).
+- **Andrea:** hacer un **seguimiento liviano** (¿el hijo usa el Yoga? ¿algo no
+  funciona?) y **pedirle un testimonio corto**. Un caso "PC viejo que revive con
+  Linux" vende el servicio #2.
+- **Matías:** ⚠️ el cuello de botella es **su falta de tiempo**, no la web. Opciones:
+  - **No insistir con el sistema #5** hasta que se comprometa (regalar software
+    a alguien sin tiempo = soporte sin retorno).
+  - **Ayuda concreta y corta** que le quite trabajo a él: cargarle el dominio,
+    conectar su **Google Business** o dejarle el sitio "listo para difundir".
+  - **Pedirle 1 referido** de su red (constructoras, maestros, clientes suyos)
+    → ese sí es un cliente potencial de pago.
+
+> **Regla de la estrategia:** el regalo **solo** rinde si termina en
+> **testimonio, caso o referido**. Sin el compromiso del cliente, el regalo se
+> vuelve **costo** (soporte gratis indefinido). Por eso: **acotar el regalo** y
+> **pedir explícitamente** la contraparte.
 
 ---
 
