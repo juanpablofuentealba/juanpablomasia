@@ -350,3 +350,110 @@ pruebas seguidas. Cero intervención manual.
 **Regla:** **si alguna vez se renombra un repo con integración de Netlify (o
 similar), hay que recrear el webhook.** Un deploy manual que funciona NO prueba
 que el automático esté vivo.
+
+---
+
+## H-90 · `cambiar-dominio.sh` fallaba EN SILENCIO: flag `sed -F` inexistente + lista fija de archivos
+
+**Fecha:** 10-nov-2026 (a16, al conectar el dominio `juanpabloia.cl`).
+
+**Síntoma.** Se corrió `./bin/cambiar-dominio.sh juanpabloia.cl` y el script
+terminó diciendo *"Total: 70 coincidencia(s)"* y *"✔ Listo"*. Pero **no cambió
+ninguna URL**: el sitio seguía con `juanpablomasia.netlify.app`.
+
+**Causa 1 — flag inválido que falla callado.** El reemplazo usaba:
+
+```bash
+sed -i -F "s#$VIEJO_HOST#$NUEVO_HOST#g" "$f"
+```
+
+`sed` **no tiene** la opción `-F`. Al recibirla, GNU sed imprime su **ayuda**
+(varias líneas de texto) y **sale sin procesar el archivo**. Como el script no
+revisaba el código de salida de `sed`, siguió como si nada: el "✔ Listo" era
+mentira. El delimitador `#` ya evita escapar las barras, así que `-F` sobraba
+desde el principio.
+
+**Causa 2 — lista fija de archivos.** El script tenía una lista `FILES=(...)`
+con 13 entradas. Faltaban páginas que también usan el host:
+**`soporte-remoto/`, `pc-macul/`, `android/` y `clases/`**. Aunque `sed` hubiera
+funcionado, esas 4 páginas habrían quedado con el dominio viejo.
+
+**Arreglo.**
+
+1. `sed -i "s#$VIEJO_HOST#$NUEVO_HOST#g"` (sin `-F`).
+2. La lista `FILES` se reemplazó por **descubrimiento automático**:
+
+```bash
+mapfile -t FILES < <(
+  grep -rl -F "$VIEJO_HOST" . \
+    --include='*.html' --include='*.xml' --include='*.txt' \
+    --include='*.js' --include='*.sh' --include='*.json' \
+    --exclude-dir=.git --exclude-dir=node_modules \
+    | sed 's#^\./##' | sort
+)
+```
+
+Así, cualquier página nueva se incluye sola. Total real: **89 reemplazos**
+(no 66 como decía la doc).
+
+**Verificación.** `grep -r 'juanpablomasia.netlify.app'` en el código → **0**
+(salvo la constante `VIEJO_HOST` del propio script y el 301 del `netlify.toml`).
+
+**Regla (lección general).** Cuando un script usa `sed` (u otra herramienta) para
+reescribir archivos, **debe revisar el código de salida y contar de verdad los
+cambios**. Un `sed` mal invocado imprime su ayuda, devuelve 0 o 1, y el script
+sigue feliz. "Total: N coincidencia(s)" contaba coincidencias **encontradas**,
+no **reemplazadas** — por eso mintió.
+
+---
+
+## H-91 · Activar el 301 al dominio ANTES de que el DNS resuelva deja el sitio INACCESIBLE
+
+**Fecha:** 10-nov-2026, minutos después de H-90.
+
+**Síntoma.** Tras el cambio de URLs se activó el 301 del `.netlify.app` al
+dominio nuevo en `netlify.toml`. Al verificar:
+
+```
+curl -I https://juanpablomasia.netlify.app/  →  301 https://juanpabloia.cl/
+curl -I https://juanpabloia.cl/             →  000 (no resuelve)
+```
+
+El sitio **dejó de responder** para cualquiera: el subdominio redirigía a un
+dominio que **todavía no existe en el DNS** (el operador aún no lo había
+conectado en Netlify).
+
+**Causa.** El orden quedó invertido. Netlify sí redirige el `.netlify.app` al
+dominio primario **automáticamente cuando el dominio está conectado**; el 301
+manual solo es un refuerzo. Activarlo antes de tiempo no aporta y **rompe**.
+
+**Arreglo.** Se **comentó** el bloque `[[redirects]]` (PR #53). El sitio volvió a
+**200**. Se reactiva cuando `https://juanpabloia.cl/` responda. Además, el script
+`cambiar-dominio.sh` ahora hace `curl` al dominio y **solo sugiere activar el 301
+si resuelve** (PR #54).
+
+**Orden correcto (documentado en `DOMINIO-PENDIENTE.md`, paso 3.5):**
+
+1. Conectar el dominio en Netlify (Domain settings) → esperar el DNS.
+2. **Cuando el dominio responda**, activar el 301.
+
+**Regla.** **Nunca redirigir a un dominio que no resuelve.** Un 301 a un destino
+muerto es peor que no tener redirección: convierte el sitio entero en un error
+de conexión. Verificar con `curl` **antes** de activar.
+
+---
+
+## H-92 · Las URLs viejas de los `.md` se actualizan AL FINAL, no en el cambio
+
+**Fecha:** 10-nov-2026.
+
+**Observación.** El cambio de dominio dejó a propósito los `.md` de
+documentación (`README.md`, `MARKETING.md`, `HALLAZGOS.md`) con la URL
+`.netlify.app`, porque **esa sigue siendo la URL viva** hasta que el dominio
+resuelva. Cambiarlas antes haría que la doc apunte a un dominio muerto.
+
+**Criterio.** En el código (canonical, sitemap, etc.) el dominio nuevo es
+correcto aunque aún no resuelva (los buscadores siguen viendo el `.netlify.app`,
+que responde 200, y las URLs nuevas se sirven cuando el dominio esté vivo). En
+la **documentación de estado** (URLs que alguien copia y pega), se actualizan
+cuando el dominio esté **vivo**.
