@@ -92,10 +92,23 @@ echo "Total: $total coincidencia(s)"
 [[ $CHECK -eq 1 ]] && exit 0
 
 # netlify.toml: redirección 301 del subdominio al dominio propio
+#
+# ⚠️ El 301 NO se activa automáticamente. Si el dominio aún no resuelve DNS,
+# el .netlify.app redirige a un dominio muerto y el sitio queda INACCESIBLE.
+# Orden: conectar el dominio en Netlify → esperar DNS → recién activar el 301.
 echo "== netlify.toml (301 del .netlify.app al dominio) =="
 if [[ $VOLVER -eq 0 ]]; then
-  echo "  → agregar a mano (o ya está) el bloque 'redirect 301':"
-  echo "     from = \"https://$VIEJO_HOST/*\"  →  to = \"https://$NUEVO_HOST/:splat\""
+  # ¿El dominio ya resuelve? Si no, avisar de NO activar el 301 todavía.
+  if curl -s -o /dev/null --max-time 8 "https://$NUEVO_HOST/" 2>/dev/null; then
+    echo "  ✔ $NUEVO_HOST responde: se puede activar el bloque 301 en netlify.toml"
+    echo "     (si está comentado, descomentarlo y pushear)"
+    echo "     from = \"https://$VIEJO_HOST/*\"  →  to = \"https://$NUEVO_HOST/:splat\""
+  else
+    echo "  ⚠ $NUEVO_HOST NO resuelve todavía. NO actives el 301 aún:"
+    echo "     dejaría $VIEJO_HOST redirigiendo a un dominio muerto."
+    echo "     1º conecta el dominio en Netlify y espera el DNS."
+    echo "     2º cuando https://$NUEVO_HOST/ responda, activa el 301."
+  fi
 else
   echo "  → recordar quitar la redirección 301 del netlify.toml"
 fi
