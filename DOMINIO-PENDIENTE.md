@@ -66,14 +66,17 @@ El agente corrió `./bin/cambiar-dominio.sh juanpabloia.cl`:
 - ✅ Cambió **89 apariciones** del host (antes se decía 66: el script tenía una
   lista fija de archivos y se le escapaban páginas nuevas — **bug corregido**,
   ahora descubre los archivos solo).
-- ✅ Activó la redirección 301 en `netlify.toml`.
 - ✅ Regeneró `sitemap.xml` y `llms.txt`.
 - ✅ Verificado: **0** apariciones del host viejo en el código.
+- ⏸️ **El 301 quedó DESACTIVADO a propósito** (comentado en `netlify.toml`).
+  Motivo: activarlo con el dominio aún sin DNS deja el `.netlify.app`
+  redirigiendo a un dominio muerto → **el sitio queda inaccesible** (pasó y se
+  corrigió el 10-nov, ver PRs #52/#53). Se reactiva cuando el dominio responda.
 
-> ⚠️ El cambio de URLs **no hace daño aunque el dominio aún no esté conectado**:
-> `juanpabloia.cl` da error de DNS hasta que se conecte en Netlify. Por eso el
-> **paso 3 (Netlify) es el que falta y requiere tu login**. Una vez que el
-> dominio responda, el sitio ya está listo y no hay que tocar nada más.
+> ⚠️ El cambio de URLs en el código **no hace daño aunque el dominio aún no esté
+> conectado**: los buscadores todavía ven el `.netlify.app` (que responde 200),
+> y las URLs nuevas solo se sirven cuando el dominio esté vivo. Por eso el
+> **paso 3 (Netlify) es el que falta y requiere tu login**.
 
 ### Paso 3 — Conectar el dominio en Netlify (5 min, requiere tu login)
 
@@ -90,6 +93,14 @@ El agente corrió `./bin/cambiar-dominio.sh juanpabloia.cl`:
 5. Esperar propagación DNS (de minutos a un par de horas).
 
 > El SSL (HTTPS) lo emite Netlify solo, gratis, cuando el DNS ya apunta bien.
+
+### Paso 3.5 — Activar el 301 (1 min, después del DNS)
+
+Cuando `https://juanpabloia.cl/` ya responda:
+
+- Descomentar el bloque `[[redirects]]` en `netlify.toml` (o correr
+  `./bin/cambiar-dominio.sh juanpabloia.cl`, que ahora **avisa** si el dominio
+  todavía no resuelve) y pushear. Eso deja el 301 del `.netlify.app` al `.cl`.
 
 ### Paso 4 — Volver a Search Console (5 min)
 
