@@ -46,11 +46,22 @@
 # ---------------------------------------------------------------------------
 # DOMINIO PROPIO — juanpabloia.cl
 #
-# Activo desde 2026-11-10 (dominio comprado). Redirige el subdominio viejo
-# .netlify.app al dominio nuevo con 301, conservando la ruta. Es una segunda
-# red de seguridad además del redirect de dominio propio de Netlify.
-[[redirects]]
-  from = "https://juanpablomasia.netlify.app/*"
-  to = "https://juanpabloia.cl/:splat"
-  status = 301
-  force = true
+# ⚠️ 301 DESACTIVADO A PROPÓSITO (2026-11-10).
+# El dominio ya está comprado, pero AÚN NO está conectado en Netlify: el DNS de
+# juanpabloia.cl todavía NO resuelve. Si este 301 estuviera activo, el
+# .netlify.app redirigiría a un dominio muerto y el sitio quedaría
+# INACCESIBLE para todo el mundo.
+#
+# Orden correcto:
+#   1. Conectar juanpabloia.cl en Netlify (Domain settings) y esperar el DNS.
+#   2. Cuando https://juanpabloia.cl/ responda, DESCOMENTAR este bloque y
+#      pushear (o correr ./bin/cambiar-dominio.sh juanpabloia.cl, que ya deja
+#      el código apuntando al dominio).
+# Netlify ya redirige el .netlify.app al dominio primario automáticamente
+# cuando el dominio está conectado, así que este 301 es solo refuerzo.
+#
+# [[redirects]]
+#   from = "https://juanpablomasia.netlify.app/*"
+#   to = "https://juanpabloia.cl/:splat"
+#   status = 301
+#   force = true
