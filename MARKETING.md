@@ -816,6 +816,51 @@ puede sostener sin equipo).
 > Regla que se mantiene: **nunca llave en mano**; para mensajería, la versión
 > aterrizada es el **asistente en la WEB** (§10.1), sin riesgo de ban.
 
+### 10.1.2 Propuesta "Pi + DeepSeek para vender" (DeepSeek, 13-nov-2026)
+
+**Qué proponía.** Usar **Pi** como "esqueleto de ejecución" y **DeepSeek** como
+"motor de bajo costo" para armar negocios con IA. Cuatro modelos, todos de
+venta: (1) **extensiones verticales** para Pi (facturas, contratos, seguridad),
+(2) **automatización de flujos para pymes** (implementación única + mensual),
+(3) **SaaS de revisión de código barato** para desarrolladores, (4) **contenido
+técnico y consultoría** sobre "cómo reemplazar soluciones caras con open source".
+Vende el diferencial de precio de DeepSeek y advierte del riesgo de seguridad
+(Pi no confirma cada herramienta; un `rm -rf` mal generado).
+
+**Qué es correcto (verificado).** DeepSeek **sí es proveedor de primera** en Pi
+(`DEEPSEEK_API_KEY`; `docs/providers.md`); Pi **sí es extensible** (extensiones
+TypeScript) y **sí soporta MCP** (`~/.pi/agent/mcp.json`). La **advertencia de
+seguridad es la mejor parte** y es real: Pi no pide confirmación por cada
+herramienta y tiene `bash` → jamás dar eso sin aislamiento (`docs/containerization.md`).
+
+**Por qué NO se adopta como negocio:**
+
+1. **Los precios no están verificados** ($0,6/M tokens "Flash", ventana de 1M)
+   → no sirven para cotizar. No se citan como dato duro.
+2. **Confunde ligereza con estar hecho.** Todo lo que llama "producto" hay que
+   construirlo (extensiones, aislamiento, permisos, errores, costos); Pi no lo trae.
+3. **Los 4 modelos se pisan** y ninguno aterriza en *qué cliente paga y por qué*:
+   es una lista de ideas, no un plan.
+4. **Duplica lo ya publicado**: el #6 (auditoría de código) ya existe a
+   **$300.000–$800.000**, y #5/#7/#8 cubren apps, automatización y módulos.
+   DeepSeek solo propone **lo mismo más barato** → va contra la regla de **no
+   vender barato** y del **ticket alto**.
+5. **La automatización pyme "mensual"** repite el patrón de fee recurrente ya
+   descartado en §10.1.1, y el "SaaS de código" exige infraestructura 24/7 que
+   la malla no tiene.
+
+**Único uso aprovechable (operativo, no de venta):** usar **DeepSeek como motor
+barato** en los propios nodos para tareas de **alto volumen y bajo valor**
+(barridos, clasificación, resúmenes), reservando los modelos caros para el
+trabajo fino. Abarata **nuestros** costos; no es un servicio al cliente.
+
+**Mapeo a lo que ya existe:** auditoría de código → **#6** (ya listo) ·
+automatización → **#7** (sobre un proceso, no mensualidad fija) ·
+herramientas de agente → **operación interna de la malla**, no catálogo.
+
+> Se guarda **solo** como idea de **costo operativo**. Para vender, la línea
+> empresa se atiende con **#6 primero (Fase 1: auditoría)**, nunca llave en mano.
+
 ### 10.2 Otras ideas postergadas
 
 - **Migrar clientes a Linux** ("andaría como seda"). ⚠️ En salud NO se puede lo
