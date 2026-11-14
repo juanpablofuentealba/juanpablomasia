@@ -861,6 +861,53 @@ herramientas de agente → **operación interna de la malla**, no catálogo.
 > Se guarda **solo** como idea de **costo operativo**. Para vender, la línea
 > empresa se atiende con **#6 primero (Fase 1: auditoría)**, nunca llave en mano.
 
+### 10.1.3 Propuesta "7 negocios con Pi + DeepSeek" (Qwen, 14-nov-2026)
+
+**Qué proponía.** Un listado de **7 negocios** ordenados por "pesos por hora":
+(1) digitización/OCR de documentos para contadores, (2) transcripción y minutas
+(~99% de margen), (3) bot de WhatsApp con cotizador, (4) micro-SaaS de
+monitoreo, (5) freelance dev con Pi de palanca, (6) web + mantención, (7)
+extensiones/skills de Pi y contenido en español. Con un "plan de 30 días" para
+validar el #1 (digitización) vendiéndolo a contadores.
+
+**Qué es correcto (parcialmente).** La **filosofía de costos** es sana: usar un
+modelo **barato por volumen** y reservar el caro para el paso difícil; **trabajo
+asíncrono por lotes** (sin videollamadas) encaja con el perfil del operador; y
+**automatizar con `pi -p` + timer** ya se hace en la malla (egm, H-91).
+
+**Por qué NO se adopta (evaluada y descartada):**
+
+1. **Cita fuentes que no existen** (`[[1]]`, `[[16]]`, `[[53]]`...) y mezcla
+datos reales con otros **no verificados** (precios de DeepSeek, "pi-chat del
+mismo equipo", modos de Pi). No sirven para cotizar.
+2. **Choca con reglas duras de privacidad:** propone mandar **RUT, datos de
+salud y financieros de terceros** a la **API alojada de DeepSeek** (servidores
+en China). Va contra la regla de privacidad y la restricción especial. La vía
+admisible es **anonimizar local → después API**, o pesos abiertos.
+3. **Repite el bot de WhatsApp** ya descartado en **§10.1 y §10.1.1** (riesgo
+de ban del número personal, sin número dedicado ni Meta Business).
+4. **Propone territorios no validados** (digitización/OCR masivo, micro-SaaS de
+monitoreo, transcripción) que **no están entre los servicios publicados** ni
+tienen cliente que los pida. Sumar un "servicio #9" antes de cerrar los
+abiertos va contra la regla de gastar los recursos necesarios.
+5. **El "plan de 30 días" ignora lo ya publicado** (#1–#9): sugiere captar
+clientes nuevos cuando la jugada pendiente es **cerrar los 3 clientes gratuitos**
+(Claudia, Andrea, Matías) y **enviar los mensajes de venta ya redactados**.
+6. **El consejo de "meterlo en contenedor"** aplica al **proceso interno**, no
+al negocio: el trabajo pesado ya se hace en el **MSI**.
+
+**Único uso aprovechable (operativo, no de venta):** confirma la política de
+**costo operativo** ya anotada en §10.1.2 — modelo barato para alto volumen y
+bajo valor en los propios nodos; modelos caros para el trabajo fino. **No es un
+servicio al cliente.**
+
+**Mapeo a lo que ya existe:** web + mantención → **#1** (ya publicado) ·
+bot WhatsApp → descartado (§10.1) · automatización/dev → **#5/#7** (§10.1.2) ·
+digitización/transcripción → **sin mapeo**, backlog puro.
+
+> Se guarda **solo** como idea de **costo operativo**. La prioridad sigue siendo
+> **cerrar los clientes abiertos**; no se agrega servicio nuevo sin cliente real.
+
 ### 10.2 Otras ideas postergadas
 
 - **Migrar clientes a Linux** ("andaría como seda"). ⚠️ En salud NO se puede lo
