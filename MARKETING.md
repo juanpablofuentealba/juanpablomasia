@@ -781,6 +781,41 @@ Humano), guardado de leads en `leads.json` (+ Sheets opcional vía Apps Script),
 derivación a humano, español chileno. **Construir cuando haya cliente y número
 dedicado.**
 
+### 10.1.1 Propuesta de agencia de WhatsApp con fee mensual (Deepseek, 12-nov-2026)
+
+**Qué proponía.** Estructurar tres paquetes con **fee mensual de agencia**:
+Base $250.000–350.000 (setup único), **Automatización $350.000–500.000/mes**
+(chatbot IA + flujos + reporte), **Growth $600.000–800.000/mes** (campañas,
+CRM/Webpay, soporte prioritario). Cobrar el **consumo de Meta aparte**
+(US$0,020/mensaje de servicio en Chile desde oct-2026; ~CLP 75.000 por 5.000
+mensajes/mes). Referencia que usó: agencias locales cobran desde $800.000 de
+implementación y $400.000–1.000.000/mes de fee; CRM+chatbot desde $250.000/mes.
+
+**Por qué NO se adopta (evaluada y descartada):**
+
+1. **Repite §10.1:** es un chatbot de WhatsApp, ya descartado por riesgo de ban
+   del número personal, sin número dedicado ni Meta Business verificada.
+2. **Mete fee mensual de agencia** ($350.000–800.000/mes) — **otro negocio**
+   (agencia con equipo y soporte 24/7), no el modelo de la malla, que es de
+   **pago único** (web + mantención opcional $9.900/$19.900/mes).
+3. **Es llave en mano con recurrencia**, justo lo que la regla de la línea
+   empresa prohíbe: vender **Fase 1 (auditoría) primero**, nunca llave en mano.
+4. **Ignora lo ya publicado:** #5 (apps a medida), #9 (negocio digital
+   completo), #6–#8 (auditoría/automatización/módulo). No los reemplaza.
+
+**Único dato aprovechable:** el **costo por mensaje de Meta en Chile**
+(US$0,020 de servicio, ~CLP 75.000 por 5.000 msg/mes; 25× Colombia). Sirve
+**solo** como argumento para **no incluir mensajería en el fee** y recomendar
+**email/webchat** — y refuerza el descarte: el margen se lo come Meta.
+
+**Mapeo a lo que ya existe (si se quisiera cubrir el mismo terreno):**
+Base → **#9 Negocio digital completo** · Automatización → **#7** pero sobre un
+proceso del cliente, **no WhatsApp** · Growth → descartado (promesa que no se
+puede sostener sin equipo).
+
+> Regla que se mantiene: **nunca llave en mano**; para mensajería, la versión
+> aterrizada es el **asistente en la WEB** (§10.1), sin riesgo de ban.
+
 ### 10.2 Otras ideas postergadas
 
 - **Migrar clientes a Linux** ("andaría como seda"). ⚠️ En salud NO se puede lo
