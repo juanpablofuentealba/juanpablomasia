@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<title>Auditoría web — Ejemplo · Panadería de barrio</title>
+<style>
+  /* TODO PDF VA EN TAMAÑO CARTA (Letter), NUNCA A4. Chile usa carta.
+     Verificar con: magick identify 'salida.pdf[0]'  -> debe dar 612x792. */
+  @page { size: Letter; margin: 16mm 15mm 18mm 15mm; }
+
+  :root{
+    --tinta:#1a1f2b; --suave:#5b6472; --linea:#dfe3ea;
+    --acento:#1f5fa8; --verde:#1a7f4b; --amar:#b58100; --rojo:#b3261e;
+    --fondo:#f6f8fb;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    color:var(--tinta); font-size:10.5pt; line-height:1.5; margin:0;
+  }
+  h1{ font-size:20pt; margin:0 0 2mm; letter-spacing:-.3px; }
+  h2{
+    font-size:13pt; color:var(--acento); margin:8mm 0 3mm;
+    border-bottom:2px solid var(--linea); padding-bottom:1.5mm;
+  }
+  h3{ font-size:11pt; margin:5mm 0 2mm; }
+  p{ margin:0 0 2.5mm; }
+  small,.meta{ color:var(--suave); font-size:9pt; }
+
+  /* Portada */
+  .portada{
+    border:1px solid var(--linea); border-left:5px solid var(--acento);
+    background:var(--fondo); padding:7mm; border-radius:3px; margin-bottom:6mm;
+  }
+  .portada .marca{ font-weight:700; color:var(--acento); letter-spacing:.5px; font-size:10pt; }
+  .portada table{ width:100%; border-collapse:collapse; margin-top:4mm; font-size:9.5pt; }
+  .portada td{ padding:1mm 0; vertical-align:top; }
+  .portada td:first-child{ color:var(--suave); width:38mm; }
+
+  /* Semáforo */
+  .semaforo{ display:flex; gap:4mm; margin-top:4mm; }
+  .sem{ flex:1; text-align:center; padding:3mm; border-radius:3px; font-size:9pt; font-weight:600; }
+  .sem.verde{ background:#e6f4ec; color:var(--verde); }
+  .sem.amar{ background:#fdf3d9; color:var(--amar); }
+  .sem.rojo{ background:#fbe9e7; color:var(--rojo); }
+
+  /* Tablas */
+  table.datos{ width:100%; border-collapse:collapse; margin:3mm 0; font-size:9.5pt; }
+  table.datos th, table.datos td{
+    border:1px solid var(--linea); padding:2mm 2.5mm; text-align:left; vertical-align:top;
+  }
+  table.datos th{ background:var(--fondo); font-weight:600; }
+  table.datos tr:nth-child(even) td{ background:#fafbfd; }
+  .p1{ color:var(--rojo); font-weight:700; }
+  .p2{ color:var(--amar); font-weight:600; }
+  .p3{ color:var(--suave); }
+
+  blockquote{
+    margin:3mm 0; padding:3mm 4mm; background:var(--fondo);
+    border-left:3px solid var(--acento); color:var(--suave); font-size:10pt;
+  }
+  ul{ margin:0 0 3mm; padding-left:5mm; }
+  li{ margin-bottom:1.2mm; }
+
+  .pie{
+    margin-top:8mm; padding-top:3mm; border-top:1px solid var(--linea);
+    color:var(--suave); font-size:8.5pt; text-align:center;
+  }
+  .salto{ page-break-before:always; }
+  .no-cortar{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+
+<!-- ============ PORTADA + RESUMEN ============ -->
+<section class="portada no-cortar">
+  <div class="marca">JUAN PABLO + IA · Servicios de software</div>
+  <h1>Auditoría web</h1>
+  <p class="meta">Revisión de tu sitio, sin tocarlo — solo lectura.</p>
+
+  <table>
+    <tr><td>Cliente</td><td><b>Ejemplo · Panadería de barrio</b></td></tr>
+    <tr><td>Sitio revisado</td><td>panaderia-ejemplo.cl (ejemplo)</td></tr>
+    <tr><td>Fecha</td><td>17-nov-2026</td></tr>
+    <tr><td>Autor</td><td>Juan Pablo Fuentealba Bizama — juanpabloia.cl</td></tr>
+  </table>
+
+  <div class="semaforo">
+    <div class="sem verde">Google: No aparece</div>
+    <div class="sem amar">Velocidad: Lenta</div>
+    <div class="sem rojo">Móvil: Se corta</div>
+  </div>
+</section>
+
+<h2>Lo que encontré, en una línea</h2>
+<p><b>Estado general: Mejorable</b> — la web existe pero Google no la muestra y en celular tarda casi 10 segundos en abrir.</p>
+
+<blockquote>
+  Esta auditoría es de <b>solo lectura</b>. No modifiqué tu web, tu hosting ni
+  tus cuentas. Son las comprobaciones que hace cualquier visitante (y Google)
+  al entrar. Los arreglos sugeridos se presupuestan aparte.
+</blockquote>
+
+<!-- ============ 1. HALLAZGOS ============ -->
+<h2>1. Los 3 puntos que más te afectan</h2>
+<table class="datos">
+  <tr><th>Prioridad</th><th>Qué encontré</th><th>Qué significa para tu negocio</th></tr>
+  <tr><td class="p1">Alta</td><td>El sitio no aparece al buscar "panadería" en tu comuna</td><td>Quien te busca no te encuentra: llega a la competencia. Falta alta en Google y texto pensado para la búsqueda real.</td></tr>
+  <tr><td class="p2">Alta</td><td>La página pesa 8 MB y tarda ~9 s en celular</td><td>Con datos móviles, la mitad de la gente se va antes de verla. Sobran imágenes sin comprimir.</td></tr>
+  <tr><td class="p3">Media</td><td>El teléfono aparece como texto, no como botón que llama</td><td>En celular nadie copia un número a mano. Un botón de WhatsApp sube los contactos.</td></tr>
+</table>
+
+<!-- ============ 2. DETALLE ============ -->
+<h2>2. Detalle de la revisión</h2>
+<table class="datos">
+  <tr><th>Se revisó</th><th>Resultado</th></tr>
+  <tr><td>Aparece en Google</td><td>No aparece en las primeras páginas; sin ficha en Google Maps</td></tr>
+  <tr><td>Velocidad de carga</td><td>~9 s en celular (recomendado: menos de 3 s)</td></tr>
+  <tr><td>Cómo se ve en celular</td><td>El menú se sale de pantalla y el texto queda muy chico</td></tr>
+  <tr><td>Seguridad (HTTPS)</td><td>OK — certificado válido</td></tr>
+  <tr><td>Botón de contacto / WhatsApp</td><td>Teléfono como texto; sin botón de WhatsApp</td></tr>
+  <tr><td>SEO básico (título, descripción, mapa)</td><td>Título genérico ("Inicio"); sin descripción; sin mapa del sitio</td></tr>
+</table>
+
+<!-- ============ 3. RECOMENDACIÓN ============ -->
+<div class="salto"></div>
+<h2>3. Qué recomiendo, en orden</h2>
+<ol>
+  <li>Comprimir las imágenes y activar el botón de WhatsApp (lo más rápido y de mayor efecto).</li>
+  <li>Crear la ficha de Google Business para aparecer en el mapa y en las búsquedas locales.</li>
+  <li>Corregir el título y la descripción pensados para cómo te busca la gente.</li>
+</ol>
+
+<h3>Lo que NO necesitas</h3>
+<p>No necesitas una web nueva. Con arreglos sobre la actual queda rápida, encontrable y con contacto directo.</p>
+
+<h2>4. Presupuesto</h2>
+<table class="datos">
+  <tr><th>Servicio</th><th>Precio</th></tr>
+  <tr><td>Landing page nueva, publicada y lista para vender (si prefieres partir de cero)</td><td>$149.900</td></tr>
+  <tr><td>Mantención mensual: cambios, respaldo y soporte</td><td>$9.900/mes (Plan Cuidado)</td></tr>
+</table>
+<p class="meta">Precios según la oferta vigente. Sin sorpresas al final. Esta
+auditoría fue gratuita y no genera compromiso.</p>
+
+<div class="pie">
+  Auditoría web · Ejemplo · Panadería de barrio · 17-nov-2026<br>
+  Juan Pablo Fuentealba Bizama · "Juan Pablo + IA" · juanpabloia.cl<br>
+  Documento confidencial. Preparado exclusivamente para Ejemplo · Panadería de barrio.
+</div>
+
+</body>
+</html>
