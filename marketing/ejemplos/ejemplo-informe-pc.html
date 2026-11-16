@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<title>Informe de chequeo de PC — Ejemplo · Cliente de prueba</title>
+<style>
+  /* TODO PDF VA EN TAMAÑO CARTA (Letter), NUNCA A4. Chile usa carta.
+     Verificar con: magick identify 'salida.pdf[0]'  -> debe dar 612x792. */
+  @page { size: Letter; margin: 16mm 15mm 18mm 15mm; }
+
+  :root{
+    --tinta:#1a1f2b; --suave:#5b6472; --linea:#dfe3ea;
+    --acento:#1f5fa8; --verde:#1a7f4b; --amar:#b58100; --rojo:#b3261e;
+    --fondo:#f6f8fb;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    color:var(--tinta); font-size:10.5pt; line-height:1.5; margin:0;
+  }
+  h1{ font-size:20pt; margin:0 0 2mm; letter-spacing:-.3px; }
+  h2{
+    font-size:13pt; color:var(--acento); margin:8mm 0 3mm;
+    border-bottom:2px solid var(--linea); padding-bottom:1.5mm;
+  }
+  h3{ font-size:11pt; margin:5mm 0 2mm; }
+  p{ margin:0 0 2.5mm; }
+  small,.meta{ color:var(--suave); font-size:9pt; }
+
+  /* Portada */
+  .portada{
+    border:1px solid var(--linea); border-left:5px solid var(--acento);
+    background:var(--fondo); padding:7mm; border-radius:3px; margin-bottom:6mm;
+  }
+  .portada .marca{ font-weight:700; color:var(--acento); letter-spacing:.5px; font-size:10pt; }
+  .portada table{ width:100%; border-collapse:collapse; margin-top:4mm; font-size:9.5pt; }
+  .portada td{ padding:1mm 0; vertical-align:top; }
+  .portada td:first-child{ color:var(--suave); width:38mm; }
+
+  /* Semáforo */
+  .semaforo{ display:flex; gap:4mm; margin-top:4mm; }
+  .sem{ flex:1; text-align:center; padding:3mm; border-radius:3px; font-size:9pt; font-weight:600; }
+  .sem.verde{ background:#e6f4ec; color:var(--verde); }
+  .sem.amar{ background:#fdf3d9; color:var(--amar); }
+  .sem.rojo{ background:#fbe9e7; color:var(--rojo); }
+
+  /* Tablas */
+  table.datos{ width:100%; border-collapse:collapse; margin:3mm 0; font-size:9.5pt; }
+  table.datos th, table.datos td{
+    border:1px solid var(--linea); padding:2mm 2.5mm; text-align:left; vertical-align:top;
+  }
+  table.datos th{ background:var(--fondo); font-weight:600; }
+  table.datos tr:nth-child(even) td{ background:#fafbfd; }
+  .p1{ color:var(--rojo); font-weight:700; }
+  .p2{ color:var(--amar); font-weight:600; }
+  .p3{ color:var(--suave); }
+
+  blockquote{
+    margin:3mm 0; padding:3mm 4mm; background:var(--fondo);
+    border-left:3px solid var(--acento); color:var(--suave); font-size:10pt;
+  }
+  ul{ margin:0 0 3mm; padding-left:5mm; }
+  li{ margin-bottom:1.2mm; }
+
+  .pie{
+    margin-top:8mm; padding-top:3mm; border-top:1px solid var(--linea);
+    color:var(--suave); font-size:8.5pt; text-align:center;
+  }
+  .salto{ page-break-before:always; }
+  .no-cortar{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+
+<!-- ============ PORTADA + RESUMEN ============ -->
+<section class="portada no-cortar">
+  <div class="marca">JUAN PABLO + IA · Servicios de software</div>
+  <h1>Informe de chequeo de PC</h1>
+  <p class="meta">Revisión remota de 15 minutos — solo lectura, sin cambios.</p>
+
+  <table>
+    <tr><td>Cliente</td><td><b>Ejemplo · Cliente de prueba</b></td></tr>
+    <tr><td>Equipo</td><td>Notebook HP · Windows 11</td></tr>
+    <tr><td>Fecha</td><td>17-nov-2026</td></tr>
+    <tr><td>Autor</td><td>Juan Pablo Fuentealba Bizama — juanpabloia.cl</td></tr>
+  </table>
+
+  <div class="semaforo">
+    <div class="sem verde">Disco: Regular</div>
+    <div class="sem amar">Arranque: Crítico</div>
+    <div class="sem rojo">Temperatura: Bueno</div>
+  </div>
+</section>
+
+<h2>Lo que encontré, en una línea</h2>
+<p><b>Estado general: Regular</b> — si se cambia el disco y se limpia el arranque, el equipo vuelve a andar rápido.</p>
+
+<blockquote>
+  Este informe es de <b>solo lectura</b>. No se modificó, formateó ni cambió nada
+  en tu equipo. No se accedió a tus fotos, chats ni archivos personales.
+  Los arreglos sugeridos se presupuestan aparte.
+</blockquote>
+
+<!-- ============ 1. HALLAZGOS ============ -->
+<h2>1. Los 3 hallazgos principales</h2>
+<table class="datos">
+  <tr><th>Prioridad</th><th>Qué encontré</th><th>Qué significa para ti</th></tr>
+  <tr><td class="p1">Alta</td><td>El disco está al 92% de salud y con solo 8 GB libres</td><td>Funciona, pero está cerca del final de su vida: es la causa más probable de que se congele.</td></tr>
+  <tr><td class="p2">Alta</td><td>Arrancan 14 programas solos al encender</td><td>Consumen memoria desde el inicio; por eso tarda 3 minutos en quedar usable.</td></tr>
+  <tr><td class="p3">Media</td><td>Windows sin actualizar desde marzo</td><td>Actualizar corrige fallas conocidas y mejora la seguridad.</td></tr>
+</table>
+
+<!-- ============ 2. DETALLE ============ -->
+<h2>2. Detalle de la revisión</h2>
+<table class="datos">
+  <tr><th>Se revisó</th><th>Resultado</th></tr>
+  <tr><td>Salud del disco (SMART)</td><td>SMART: precaución — sectores reasignados</td></tr>
+  <tr><td>Uso de memoria y CPU</td><td>8 GB, uso normal; 2 GB tomados por programas de inicio</td></tr>
+  <tr><td>Programas de inicio</td><td>14 programas innecesarios</td></tr>
+  <tr><td>Actualizaciones pendientes</td><td>37 actualizaciones pendientes</td></tr>
+  <tr><td>Errores en los registros (apagados/reinicios)</td><td>3 apagados inesperados en el último mes</td></tr>
+  <tr><td>Estado del respaldo</td><td>No hay respaldo automático configurado</td></tr>
+</table>
+
+<!-- ============ 3. RECOMENDACIÓN ============ -->
+<div class="salto"></div>
+<h2>3. Qué recomiendo, en orden</h2>
+<ol>
+  <li>Respaldar tus archivos hoy mismo (lo primero, para no perder nada).</li>
+  <li>Reemplazar el disco por un SSD y dejar el sistema como nuevo.</li>
+  <li>Quitar los programas de inicio y aplicar las actualizaciones.</li>
+</ol>
+
+<h3>Lo que NO necesitas</h3>
+<p>No necesitas comprar un PC nuevo. Con disco nuevo y mantención, este equipo rinde bien varios años más.</p>
+
+<h2>4. Presupuesto</h2>
+<table class="datos">
+  <tr><th>Servicio</th><th>Precio</th></tr>
+  <tr><td>Respaldo de tus archivos + instalación de SSD + sistema optimizado</td><td>$44.900 (visita en Macul)</td></tr>
+  <tr><td>Mantención y limpieza de inicio (sin cambio de disco)</td><td>$18.000 por hora de trabajo remoto</td></tr>
+</table>
+<p class="meta">Precios según la oferta vigente. Sin sorpresas al final. El
+diagnóstico (este informe) fue gratuito y no genera compromiso.</p>
+
+<div class="pie">
+  Informe de chequeo de PC · Ejemplo · Cliente de prueba · 17-nov-2026<br>
+  Juan Pablo Fuentealba Bizama · "Juan Pablo + IA" · juanpabloia.cl<br>
+  Documento confidencial. Preparado exclusivamente para Ejemplo · Cliente de prueba.
+</div>
+
+</body>
+</html>
