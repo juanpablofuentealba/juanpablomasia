@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: 1200px 630px; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:#0a0a12; color:#e8e8f0;
+    display:flex; align-items:center; padding:70px 80px;
+    position:relative;
+  }
+  .glow{
+    position:absolute; right:-120px; top:-80px; width:560px; height:560px;
+    border-radius:50%;
+    background:radial-gradient(closest-side, rgba(79,140,255,.28), transparent);
+  }
+  .content{ position:relative; z-index:1; }
+  .kicker{
+    display:inline-block; padding:7px 18px; border-radius:999px;
+    border:1px solid rgba(255,255,255,.14); color:#00d4ff;
+    font-size:22px; font-weight:600; letter-spacing:.04em; margin-bottom:26px;
+  }
+  h1{ font-size:62px; font-weight:800; line-height:1.08; letter-spacing:-.5px; margin-bottom:26px; }
+  h1 .g{ background:linear-gradient(90deg,#4f8cff,#00d4ff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .promos{ display:flex; gap:20px; }
+  .promo{
+    display:flex; align-items:center; gap:14px;
+    border:1px solid rgba(255,255,255,.12); background:#12121f;
+    border-radius:14px; padding:16px 22px;
+  }
+  .tag{
+    background:#4f8cff; color:#fff; font-size:17px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.05em; padding:5px 14px; border-radius:999px;
+  }
+  .txt{ font-size:24px; color:#9a9ab0; }
+  .txt b{ color:#e8e8f0; }
+  .foot{ margin-top:30px; font-size:24px; color:#9a9ab0; }
+  .foot b{ color:#00d4ff; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="content">
+    <div class="kicker">JUAN PABLO + IA · MACUL Y TODO CHILE</div>
+    <h1><span class="g">Servicios gratis</span> para tu PC y tu web</h1>
+    <div class="promos">
+      <div class="promo"><span class="tag">Gratis</span><span class="txt"><b>Chequeo de tu PC</b></span></div>
+      <div class="promo"><span class="tag">Gratis</span><span class="txt"><b>Auditoría de tu web</b></span></div>
+    </div>
+    <div class="foot">Informe en 15 min · Páginas web desde <b>$149.900</b></div>
+  </div>
+</body>
+</html>
