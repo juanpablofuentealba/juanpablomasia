@@ -103,7 +103,7 @@
   /* CTA de promociones gratis (lead magnets), bajo los botones del hero */
   .promos {
     display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-    max-width: 820px; margin: 26px auto 0;
+    max-width: 820px; margin: 0 auto 26px;
   }
   .promo {
     display: flex; align-items: center; gap: 12px; text-align: left;
